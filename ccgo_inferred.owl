@@ -1,0 +1,4595 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ModSem2022/ccgo/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ModSem2022/ccgo/">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Davide Mauri</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
+        <Literal>02/01/2023</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal xml:lang="it">OntologiaGiochiCarteCollezionabili è stata pensata per modellare giochi di carte collezionabili (CCG) come Magic: The Gathering. Il suo scopo è fornire un modello generale che possa essere utilizzato nella costruzione di basi di dati.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <Literal xml:lang="it">OntologiaGiochiCarteCollezionabili</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamepspaceUri"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://www.semanticweb.org/ModSem2022/ccgo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+        <Literal>ccgo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="it">Ontologia per Giochi di Carte collezionabili</Literal>
+    </Annotation>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_R"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Giocatore"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="haVelocita"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_G"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AbilitàInnescata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Mazzo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CartaPermanente"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="haDifesa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CartaPosseduta"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="haAttacco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoLOR_5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoLOR_4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CollezioneCarte"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="sottotipoCarta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="mazzoPensatoPer"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Formato"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Abilità"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="haCaratteristica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Costo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="nominaCarta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Carta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CartaNonPermanente"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_0"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="haSet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="haRarità"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="appartieneACollezione"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#related"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaritàRara"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Collezionista"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CartaUnità"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LivelloRarità"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="possiedeCarta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AbilitàAttivata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AbilitàParolaChiave"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="compostoDa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="haCosto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="haImmagine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="nomeCarta"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AbilitàStatica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="possiede"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="stampataPiuVolte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CartaAusiliare"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GiocoCarteCollezionabili"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamepspaceUri"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="cartaNonLegaleIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="mazzoNonLegaleIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="quantitaCarta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="haAbilità"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CaratteristicaCarta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Set"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="dannoAbilita"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="nomeGioco"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="haNome"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaritàComune"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="testoAbilità"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/givenName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Persona"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:subclassOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="costoAbilità"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="tipoCarta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="interagisceCon"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+        <Class IRI="GiocoCarteCollezionabili"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="AbilitàParolaChiave"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Abilità"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="haNome"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="CartaUnità"/>
+        <ObjectIntersectionOf>
+            <Class IRI="CartaPermanente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haAttacco"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haDifesa"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="Collezionista"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="possiede"/>
+            <Class IRI="CollezioneCarte"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="Giocatore"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="possiede"/>
+            <Class IRI="Mazzo"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="LivelloRarità"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="Abilità"/>
+        <Class IRI="CaratteristicaCarta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AbilitàAttivata"/>
+        <Class IRI="Abilità"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AbilitàAttivata"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="costoAbilità"/>
+            <Class IRI="Costo"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AbilitàInnescata"/>
+        <Class IRI="Abilità"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AbilitàParolaChiave"/>
+        <Class IRI="Abilità"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AbilitàStatica"/>
+        <Class IRI="Abilità"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Carta"/>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CartaAusiliare"/>
+        <Class IRI="CartaPermanente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CartaNonPermanente"/>
+        <Class IRI="Carta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CartaPermanente"/>
+        <Class IRI="Carta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CartaPosseduta"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CartaUnità"/>
+        <Class IRI="CartaPermanente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CollezioneCarte"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Collezionista"/>
+        <Class IRI="Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Costo"/>
+        <Class IRI="CaratteristicaCarta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Giocatore"/>
+        <Class IRI="Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LivelloRarità"/>
+        <Class IRI="CaratteristicaCarta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Mazzo"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Persona"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Set"/>
+        <Class IRI="CaratteristicaCarta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Set"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="haNome"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="AbilitàParolaChiave"/>
+        <Class IRI="CartaPosseduta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="AbilitàParolaChiave"/>
+        <Class IRI="Costo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaAusiliare"/>
+        <Class IRI="CartaNonPermanente"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaAusiliare"/>
+        <Class IRI="CartaUnità"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaNonPermanente"/>
+        <Class IRI="CartaPermanente"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaNonPermanente"/>
+        <Class IRI="CartaUnità"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaPosseduta"/>
+        <Class IRI="CollezioneCarte"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CartaPosseduta"/>
+        <Class IRI="Mazzo"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="CartaPermanente"/>
+        <Class IRI="CartaAusiliare"/>
+        <Class IRI="CartaUnità"/>
+    </DisjointUnion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàInnescata"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàParolaChiave"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàParolaChiave"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàInnescata"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàStatica"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàStatica"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàParolaChiave"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàInnescata"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàInnescata"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Abilità"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="AbilitàParolaChiave"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class IRI="CartaPermanente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haAttacco"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haDifesa"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haAttacco"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haDifesa"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class IRI="CartaPermanente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haAttacco"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haDifesa"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haAttacco"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haDifesa"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class IRI="CartaPermanente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haAttacco"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="haDifesa"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haAttacco"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="haDifesa"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPermanente"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaUnità"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Playing_card"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Carta"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaNonPermanente"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPosseduta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPosseduta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPosseduta"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Costo"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Formato"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Giocatore"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Persona"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="possiede"/>
+            <Class IRI="Mazzo"/>
+        </ObjectMinCardinality>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GiocoCarteCollezionabili"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GiocoCarteCollezionabili"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Mazzo"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectUnionOf>
+            <Class IRI="CollezioneCarte"/>
+            <Class IRI="Mazzo"/>
+        </ObjectUnionOf>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Mazzo"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectUnionOf>
+            <Class IRI="CollezioneCarte"/>
+            <Class IRI="Mazzo"/>
+        </ObjectUnionOf>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LivelloRarità"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LivelloRarità"/>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LivelloRarità"/>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LivelloRarità"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="RaritàRara"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LivelloRarità"/>
+        <NamedIndividual IRI="RaritàRara"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectOneOf>
+            <NamedIndividual IRI="RaritàComune"/>
+            <NamedIndividual IRI="RaritàEpica"/>
+            <NamedIndividual IRI="RaritàMitica"/>
+            <NamedIndividual IRI="RaritàNonComune"/>
+            <NamedIndividual IRI="RaritàRara"/>
+        </ObjectOneOf>
+        <NamedIndividual IRI="RaritàRara"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Set"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CaratteristicaCarta"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Set"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPosseduta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CartaPosseduta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="CollezioneCarte"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectUnionOf>
+            <Class IRI="CollezioneCarte"/>
+            <Class IRI="Mazzo"/>
+        </ObjectUnionOf>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Collezionista"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Persona"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="possiede"/>
+            <Class IRI="CollezioneCarte"/>
+        </ObjectExactCardinality>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Formato"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="RaritàComune"/>
+        <NamedIndividual IRI="RaritàEpica"/>
+        <NamedIndividual IRI="RaritàMitica"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+        <NamedIndividual IRI="RaritàRara"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="nominaCarta"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="costoAbilità"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <NamedIndividual IRI="RaritàEpica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="interagisceCon"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <NamedIndividual IRI="RaritàNonComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="RaritàRara"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="RaritàRara"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haSet"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haSet"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haSet"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="RaritàComune"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haSet"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haSet"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="cartaNonLegaleIn"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haAbilità"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haCosto"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="haRarità"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <NamedIndividual IRI="RaritàMitica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiede"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiede"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="mazzoPensatoPer"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="mazzoNonLegaleIn"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiede"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàAumentoLivelloVayne"/>
+        <Literal>Aumento di livello quando ti ho visto attaccare 4 volte.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+        <Literal>Barriera</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàBarriera"/>
+        <Literal>Nega i danni successivi che l&apos;unità subirebbe. Dura un turno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàCapriola"/>
+        <Literal>Equipaggia un alleato con un equipaggiamento di costo 2 o meno. L&apos;alleato avvia un attacco gratuito.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="dannoAbilita"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàCecchinoCieloaperto"/>
+        <Literal>Infliggi un danno a una creatura bersaglio con volare</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+        <Literal>Esploratore</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàEsploratore"/>
+        <Literal>La prima volta che le unità Esploratore attaccano da sole in un turno, prepara l&apos;assalto.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàGrandePiazza"/>
+        <Literal>Quando viene evocato un alleato, forniscigli +1/+0 e Sfidante per questo turno.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàMazzaOsso"/>
+        <Literal>+5/+5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàOnoreDeiPuri"/>
+        <Literal>Le creature bianche che controlli prendono +1/+1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+        <Literal>Raggiungere</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàRaggiungere"/>
+        <Literal>Questa creatura può bloccare le creatue con volare.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàTurnoExtra"/>
+        <Literal>Gioca un turno extra dopo questo.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàVayne"/>
+        <Literal>Quando vengo evocata o all&apos;inizio del turno: Crea una Capriola nella mano. Se ne hai già una copia, riducine il costo di 1.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàVayneLvl2"/>
+        <Literal>Quando vengo evocata o all&apos;inizio del turno: Crea una Capriola dicosto 0 nella tua mano. Se ne hai già una copia, riducine il costo a 0.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+        <Literal>Volare</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="testoAbilità"/>
+        <NamedIndividual IRI="AbilitàVolare"/>
+        <Literal>Questa creatura non può essere bloccata tranne che dalle creature con volare o raggiungere.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <Literal>Capriola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <Literal>Capriola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <Literal>Lento</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaLORCapriola"/>
+        <Literal>Incantesimo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <Literal>La Grande Piazza</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <Literal>La Grande Piazza</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaLORGrandePiazza"/>
+        <Literal>Monumento</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <Literal>Guardiano di Zannaverde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <Literal>Guardiano di Zannaverde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaLORGuardianoZannaverde"/>
+        <Literal>Elite</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <Literal>Mazza d&apos;Osso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORMazzaOsso"/>
+        <Literal>Mazza d&apos;Osso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <Literal>Vayne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <Literal>Vayne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaLORVayneLvl1"/>
+        <Literal>Campione</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <Literal>Vayne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaLORVayneLvl2"/>
+        <Literal>Vayne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal>Cecchina del Cieloaperto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal>Cecchina del Cieloaperto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal>Arciere</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaMTGCecchinaCieloaperto"/>
+        <Literal>Elfo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGFulmine"/>
+        <Literal>Fulmine</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <Literal>Isola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaMTGIsola"/>
+        <Literal>Isola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <Literal>Onore dei Puri</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <Literal>Onore dei Puri</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaMTGOnoreDeiPuri"/>
+        <Literal>Incantesimo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal>Ornitottero</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal>Ornitottero</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal>Tottero</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="stampataPiuVolte"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaMTGOrnitottero"/>
+        <Literal>Creatura Artefatto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haAttacco"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haDifesa"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haImmagine"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://cards.scryfall.io/large/front/4/0/409f9b88-f03e-40b6-9883-68c14c37c0de.jpg?1562546736</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal>Orso Grizzly</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeCarta"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal>Orso Grizzly</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="sottotipoCarta"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal>Orso</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="stampataPiuVolte"/>
+        <NamedIndividual IRI="CartaMTGOrsoGrizzly"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haImmagine"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://cards.scryfall.io/large/front/7/0/70901356-3266-4bd9-aacc-f06c27271de5.jpg?1614638832</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="tipoCarta"/>
+        <NamedIndividual IRI="CartaMTGPassoTemporale"/>
+        <Literal>Stregoneria</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="quantitaCarta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="quantitaCarta"/>
+        <NamedIndividual IRI="CartaPosseduta_OrsoGrizzly_Davide2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="quantitaCarta"/>
+        <NamedIndividual IRI="CartaPosseduta_PassoTemporale_Davide"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoLOR_3"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoLOR_4"/>
+        <Literal>4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoLOR_5"/>
+        <Literal>5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_0"/>
+        <Literal>{0}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_1G"/>
+        <Literal>{1}{G}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_1U"/>
+        <Literal>{1}{U}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_1W"/>
+        <Literal>{1}{W}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_2G"/>
+        <Literal>{2}{G}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_G"/>
+        <Literal>{G}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="compostoDa"/>
+        <NamedIndividual IRI="CostoMTG_R"/>
+        <Literal>{R}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="FormatoMTGModern"/>
+        <Literal>Modern</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/givenName"/>
+        <NamedIndividual IRI="GiocatoreDavide"/>
+        <Literal>Davide</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+        <Literal>Legends Of Runeterra</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeGioco"/>
+        <NamedIndividual IRI="LegendsOfRuneterra"/>
+        <Literal>Legends Of Runeterra</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+        <Literal>Magic: The Gathering</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nomeGioco"/>
+        <NamedIndividual IRI="MagicTheGathering"/>
+        <Literal>Magic: The Gathering</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="MazzoDavide_1"/>
+        <Literal>Mazzo RossoVerde</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="MazzoDavide_2"/>
+        <Literal>Mazzo Verde Blu</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="SetMTGDecimaEdizione"/>
+        <Literal>Decima Edizione</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="SetMTGMagic2010"/>
+        <Literal>Magic 2010</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="quantitaCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="quantitaCarta"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/givenName"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola"/>
+        <Literal>Nicola</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="haNome"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander"/>
+        <Literal>Commander</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="haCaratteristica"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="haAbilità"/>
+        <ObjectProperty IRI="haCaratteristica"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="haCosto"/>
+        <ObjectProperty IRI="haCaratteristica"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="haRarità"/>
+        <ObjectProperty IRI="haCaratteristica"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="haSet"/>
+        <ObjectProperty IRI="haCaratteristica"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="abilitàDiCarta"/>
+        <ObjectProperty IRI="haAbilità"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="interagisceCon"/>
+        <ObjectProperty IRI="interagisceCon"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="haRarità"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="mazzoPensatoPer"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="interagisceCon"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="interagisceCon"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <Class IRI="CartaPosseduta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <Class IRI="CartaPosseduta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="cartaNonLegaleIn"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="costoAbilità"/>
+        <Class IRI="Abilità"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <Class IRI="CartaPosseduta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="haAbilità"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="haCosto"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="haRarità"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="haSet"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="interagisceCon"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="mazzoNonLegaleIn"/>
+        <Class IRI="Mazzo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="mazzoPensatoPer"/>
+        <Class IRI="Mazzo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="nominaCarta"/>
+        <Class IRI="Abilità"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="possiede"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="appartieneACollezione"/>
+        <Class IRI="CollezioneCarte"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="appartieneAMazzo"/>
+        <Class IRI="Mazzo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="cartaNonLegaleIn"/>
+        <Class IRI="Formato"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="costoAbilità"/>
+        <Class IRI="Costo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="faRiferimentoACarta"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="faRiferimentoAGioco"/>
+        <Class IRI="GiocoCarteCollezionabili"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="haAbilità"/>
+        <Class IRI="Abilità"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="haCaratteristica"/>
+        <Class IRI="CaratteristicaCarta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="haCosto"/>
+        <Class IRI="Costo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="haRarità"/>
+        <Class IRI="LivelloRarità"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="haSet"/>
+        <Class IRI="Set"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="interagisceCon"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="mazzoNonLegaleIn"/>
+        <Class IRI="Formato"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="mazzoPensatoPer"/>
+        <Class IRI="Formato"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="nominaCarta"/>
+        <Class IRI="Carta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="possiede"/>
+        <ObjectUnionOf>
+            <Class IRI="CollezioneCarte"/>
+            <Class IRI="Mazzo"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="possiedeCarta"/>
+        <Class IRI="CartaPosseduta"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent"/>
+            <ObjectProperty IRI="cartaNonLegaleIn"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="mazzoNonLegaleIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="haAbilità"/>
+            <ObjectProperty IRI="nominaCarta"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="interagisceCon"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="possiede"/>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="possiedeCarta"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="nomeCarta"/>
+        <DataProperty IRI="haNome"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="nomeGioco"/>
+        <DataProperty IRI="haNome"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="haAttacco"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="haDifesa"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="haImmagine"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="haNome"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="nomeCarta"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="nomeGioco"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="quantitaCarta"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="stampataPiuVolte"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="compostoDa"/>
+        <Class IRI="Costo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="dannoAbilita"/>
+        <Class IRI="Abilità"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="haAttacco"/>
+        <Class IRI="CartaUnità"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="haDifesa"/>
+        <Class IRI="CartaUnità"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="haImmagine"/>
+        <Class IRI="Carta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="haNome"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="haVelocita"/>
+        <Class IRI="CartaNonPermanente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="nomeCarta"/>
+        <Class IRI="Carta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="nomeGioco"/>
+        <Class IRI="http://dbpedia.org/resource/Collectible_card_game"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="nomeGioco"/>
+        <Class IRI="GiocoCarteCollezionabili"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="quantitaCarta"/>
+        <Class IRI="CartaPosseduta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="sottotipoCarta"/>
+        <Class IRI="Carta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="stampataPiuVolte"/>
+        <Class IRI="Carta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="testoAbilità"/>
+        <Class IRI="Abilità"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="tipoCarta"/>
+        <Class IRI="Carta"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="compostoDa"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="dannoAbilita"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="haAttacco"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="haDifesa"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="haImmagine"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="haNome"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="haVelocita"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="nomeCarta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="nomeGioco"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="quantitaCarta"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="sottotipoCarta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="stampataPiuVolte"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="testoAbilità"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="tipoCarta"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>QuattroCopiePerMazzoModern</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="appartieneAMazzo"/>
+                <Variable IRI="cp"/>
+                <Variable IRI="m"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="quantitaCarta"/>
+                <Variable IRI="cp"/>
+                <Variable IRI="q"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThan">
+                <Variable IRI="q"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="Formato"/>
+                <Variable IRI="f"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="haNome"/>
+                <Variable IRI="f"/>
+                <Literal>Modern</Literal>
+            </DataPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoACarta"/>
+                <Variable IRI="cp"/>
+                <Variable IRI="c"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="tipoCarta"/>
+                <Variable IRI="c"/>
+                <Variable IRI="t"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#notEqual">
+                <Variable IRI="t"/>
+                <Literal>Terra Base</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="mazzoNonLegaleIn"/>
+                <Variable IRI="m"/>
+                <Variable IRI="f"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regola che permette di assegnare un gioco di riferimento a un mazzo sulla base delle carte che lo compongono.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>AssegnaGiocoAMazzo</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="appartieneAMazzo"/>
+                <Variable IRI="m"/>
+                <Variable IRI="cp"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoACarta"/>
+                <Variable IRI="cp"/>
+                <Variable IRI="c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="c"/>
+                <Variable IRI="g"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="m"/>
+                <Variable IRI="g"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regola che garantisce che un mazzo possa essere solo del gioco di cui contiene le carte.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>MazzoDiUnSoloGioco</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="appartieneAMazzo"/>
+                <Variable IRI="m"/>
+                <Variable IRI="cp"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoACarta"/>
+                <Variable IRI="cp"/>
+                <Variable IRI="c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="m"/>
+                <Variable IRI="g1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="c"/>
+                <Variable IRI="g2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <SameIndividualAtom>
+                <Variable IRI="g1"/>
+                <Variable IRI="g2"/>
+            </SameIndividualAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regola che impedisce che una carta di un gioco abbia il set di un altro gioco</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>SetCartaStessoGioco</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="c"/>
+                <Variable IRI="g1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="faRiferimentoAGioco"/>
+                <Variable IRI="s"/>
+                <Variable IRI="g2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="haSet"/>
+                <Variable IRI="c"/>
+                <Variable IRI="s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <SameIndividualAtom>
+                <Variable IRI="g1"/>
+                <Variable IRI="g2"/>
+            </SameIndividualAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regola che stabilisce automaticamente se una carta sia stata ristampata o meno.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>CartaRistampata</Literal>
+        </Annotation>
+        <Body>
+            <DifferentIndividualsAtom>
+                <Variable IRI="s1"/>
+                <Variable IRI="s2"/>
+            </DifferentIndividualsAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="haSet"/>
+                <Variable IRI="c"/>
+                <Variable IRI="s1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="haSet"/>
+                <Variable IRI="c"/>
+                <Variable IRI="s2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="stampataPiuVolte"/>
+                <Variable IRI="c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Regola che permette di identificare i mazzi che non sono legali nel formato per cui sono stati pensati.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>MazzoIllegale</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="mazzoPensatoPer"/>
+                <Variable IRI="m"/>
+                <Variable IRI="f1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="mazzoNonLegaleIn"/>
+                <Variable IRI="m"/>
+                <Variable IRI="f2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <DifferentIndividualsAtom>
+                <Variable IRI="f1"/>
+                <Variable IRI="f2"/>
+            </DifferentIndividualsAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements</IRI>
+        <Literal>This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom</IRI>
+        <Literal>This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent</IRI>
+        <Literal>This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences</IRI>
+        <Literal>This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent</IRI>
+        <Literal>This annotation property is used in order to describe the intent of the content pattern.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest</IRI>
+        <Literal>This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf</IRI>
+        <Literal>This annotation property is used for referring a cloned ontology entity to its cloning source.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf</IRI>
+        <Literal>This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom</IRI>
+        <Literal>This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs</IRI>
+        <Literal>This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios</IRI>
+        <Literal>This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: &quot;the brain is part of the human body&quot;. Scenarios are expressed as natural language sentences.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Abilità</IRI>
+        <Literal xml:lang="it">Un&apos;abilità è una capacità speciale di una carta che può alterare il normale funzionamento del gioco o influenzare altre carte in vari modi. Ogni carta può possedere un qualsiasi numero di abilità (in genere limitato solamente dalla dimensione della carta fisica/virtuale).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Abilità</IRI>
+        <Literal xml:lang="it">Abilità carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàAttivata</IRI>
+        <Literal xml:lang="it">Abilità che può essere attivata a comando. Richiede il pagamento di un costo per l&apos;attivazione (ma non sono le uniche abilità che possono avere un costo associato).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàAttivata</IRI>
+        <Literal xml:lang="it">Abilità attivata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàAumentoLivelloVayne</IRI>
+        <Literal xml:lang="it">Abilità innescata che permette a Vayne di aumentare di livello.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàAumentoLivelloVayne</IRI>
+        <Literal xml:lang="it">Abilità per l&apos;aumento di livello di Vayne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàBarriera</IRI>
+        <Literal xml:lang="it">Abilità di LOR Barriera</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàBarriera</IRI>
+        <Literal xml:lang="it">Abilità di LOR: Barriera</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàCapriola</IRI>
+        <Literal xml:lang="it">Abilità della carta Capriola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàCapriola</IRI>
+        <Literal xml:lang="it">Abilità della carta Capriola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàCecchinoCieloaperto</IRI>
+        <Literal xml:lang="it">Abilità attivata della carta Cecchino Cieloaperto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàCecchinoCieloaperto</IRI>
+        <Literal xml:lang="it">Abilità di Cecchino Cieloaperto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàEsploratore</IRI>
+        <Literal xml:lang="it">Abilità &quot;Esploratore&quot; di alcune carte di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàEsploratore</IRI>
+        <Literal xml:lang="it">Abilità Esploratore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàGrandePiazza</IRI>
+        <Literal xml:lang="it">Abilità innescata della carta Grande Piazza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàGrandePiazza</IRI>
+        <Literal xml:lang="it">Abilità Grande Piazza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàInnescata</IRI>
+        <Literal xml:lang="it">Abilità che si innesca automaticamente al verificarsi di una determinata condizione. In genere contengono le parole &quot;Quando&quot;, &quot;Ogniqualvolta&quot;, ecc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàInnescata</IRI>
+        <Literal xml:lang="it">Abilità Innescata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàMazzaOsso</IRI>
+        <Literal xml:lang="it">Abilità statica della carta Mazza d&apos;Osso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàMazzaOsso</IRI>
+        <Literal xml:lang="it">Abilità Mazza d&apos;Osso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàOnoreDeiPuri</IRI>
+        <Literal xml:lang="it">Abilità statica della carta Onore dei Puri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàOnoreDeiPuri</IRI>
+        <Literal xml:lang="it">Abilità Onore dei Puri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàParolaChiave</IRI>
+        <Literal xml:lang="it">Abilità di una carta rappresentata da una parola chiave. Sulle carte, generalmente, si trova solo tale parola chiave, il cui funzionamento è però descritto da un testo più lungo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàParolaChiave</IRI>
+        <Literal xml:lang="it">Abilità Parola Chiave</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàRaggiungere</IRI>
+        <Literal xml:lang="it">Abilità descritta dalla parola chiave Raggiungere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàRaggiungere</IRI>
+        <Literal xml:lang="it">Abilità Raggiungere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàStatica</IRI>
+        <Literal xml:lang="it">Abilità di una carta che ha un effetto continuo e non variabile in un certo interallo di tempo. Generalmente le abilità statiche sono legate ai permanenti, anche se non sempre è così.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàStatica</IRI>
+        <Literal xml:lang="it">Abilità statica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàTurnoExtra</IRI>
+        <Literal xml:lang="it">Abilità che permette di giocare un turno extra</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàTurnoExtra</IRI>
+        <Literal xml:lang="it">Abilità Turno extra</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàVayne</IRI>
+        <Literal xml:lang="it">Abilità della carta Vayne di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàVayne</IRI>
+        <Literal xml:lang="it">Abilità di Vayne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàVayneLvl2</IRI>
+        <Literal xml:lang="it">Abilità della carta Vayne (lvl 2) di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàVayneLvl2</IRI>
+        <Literal xml:lang="it">Abilità Vayne LVL 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AbilitàVolare</IRI>
+        <Literal xml:lang="it">Abilità definita da parola chiave &quot;Volare&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AbilitàVolare</IRI>
+        <Literal xml:lang="it">Abilità Volare</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CaratteristicaCarta</IRI>
+        <Literal xml:lang="it">Caratteristica o dettaglio di una specifica carta di un CCG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CaratteristicaCarta</IRI>
+        <Literal xml:lang="it">Caratteristica di una carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Carta</IRI>
+        <Literal xml:lang="it">Carta di un CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Carta</IRI>
+        <Literal xml:lang="it">Carta di un CCG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaAusiliare</IRI>
+        <Literal xml:lang="it">Carta permanente che non rappresenta un&apos;unità, ma un altro tipo di carta con effetto continuo sul gioco. A seconda del CCG seguono regole diverse.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaAusiliare</IRI>
+        <Literal xml:lang="it">Carta ausiliare</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORCapriola</IRI>
+        <Literal xml:lang="it">Carta &quot;Capriola&quot; di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORCapriola</IRI>
+        <Literal xml:lang="it">Carta Capriola di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORGrandePiazza</IRI>
+        <Literal xml:lang="it">Carta Grande Piazza di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORGrandePiazza</IRI>
+        <Literal xml:lang="it">Carta Grande Piazza LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORGuardianoZannaverde</IRI>
+        <Literal xml:lang="it">Carta &quot;Guardiano Zannaverde&quot; di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORGuardianoZannaverde</IRI>
+        <Literal xml:lang="it">Carta Guardiano Zannaverde LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORMazzaOsso</IRI>
+        <Literal xml:lang="it">Carta &quot;Mazza d&apos;Osso&quot; di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORMazzaOsso</IRI>
+        <Literal xml:lang="it">Carta Mazza d&apos;Osso di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORVayneLvl1</IRI>
+        <Literal xml:lang="it">Carta &quot;Vayne LVL 1&quot; di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORVayneLvl1</IRI>
+        <Literal xml:lang="it">Carta Vayne LVL 1 LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaLORVayneLvl2</IRI>
+        <Literal xml:lang="it">Carta &quot;Vayne LVL 2&quot; di LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaLORVayneLvl2</IRI>
+        <Literal xml:lang="it">Carta Vayne LVL 2 LOR</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGCecchinaCieloaperto</IRI>
+        <Literal xml:lang="it">Carta &quot;Cecchina Cieloaperto&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGCecchinaCieloaperto</IRI>
+        <Literal xml:lang="it">Carta MTG Cecchina Cieloaperto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGFulmine</IRI>
+        <Literal xml:lang="it">Carta &quot;Fulmine&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGFulmine</IRI>
+        <Literal xml:lang="it">Carta MTG Fulmine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGIsola</IRI>
+        <Literal xml:lang="it">Carta &quot;Isola&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGIsola</IRI>
+        <Literal xml:lang="it">Carta MTG Isola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGOnoreDeiPuri</IRI>
+        <Literal xml:lang="it">Carta &quot;Onore dei Puri&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGOnoreDeiPuri</IRI>
+        <Literal xml:lang="it">Carta MTG Onore dei Puri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGOrnitottero</IRI>
+        <Literal xml:lang="it">Carta &quot;Ornitottero&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGOrnitottero</IRI>
+        <Literal xml:lang="it">Carta MTG Ornitottero</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGOrsoGrizzly</IRI>
+        <Literal xml:lang="it">Carta &quot;Orso Grizzly&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGOrsoGrizzly</IRI>
+        <Literal xml:lang="it">Carta MTG Orso Grizzly</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaMTGPassoTemporale</IRI>
+        <Literal xml:lang="it">Carta &quot;Passo Temporale&quot; di MTG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaMTGPassoTemporale</IRI>
+        <Literal xml:lang="it">Carta MTG Passo Temporale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaNonPermanente</IRI>
+        <Literal xml:lang="it">Tipo di carta che esaurisce il suo effetto quando viene giocata e non rimane sul campo di gioco, ma viene scartata.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaNonPermanente</IRI>
+        <Literal xml:lang="it">Carta non permanente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaPermanente</IRI>
+        <Literal xml:lang="it">Carta che permane sul campo di gioco dopo essere stata giocata. Le sue abilità hanno effetto fintanto che essa rimane in gioco.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaPermanente</IRI>
+        <Literal xml:lang="it">Carta permanente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaPosseduta</IRI>
+        <Literal xml:lang="it">Una carta posseduta da una Persona che l&apos;ha inserita o in un Mazzo o nella sua Collezione.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaPosseduta</IRI>
+        <Literal xml:lang="it">Carta in un Mazzo o Collezione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide1</IRI>
+        <IRI>MazzoDavide_1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide1</IRI>
+        <Literal xml:lang="it">Carta &quot;Orso Grizzly&quot; inserita da Davide nel suo Mazzo RossoVerde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide1</IRI>
+        <Literal xml:lang="it">Orso Grizzly di Davide in rosso-verde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide2</IRI>
+        <IRI>MazzoDavide_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide2</IRI>
+        <Literal xml:lang="it">Carta &quot;Orso Grizzly&quot; inserita da Davide nel suo Mazzo Verde Blu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide2</IRI>
+        <Literal xml:lang="it">Orso Grizzly di Davide in verde-blu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <IRI>CartaPosseduta_PassoTemporale_Davide</IRI>
+        <IRI>MazzoDavide_2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaPosseduta_PassoTemporale_Davide</IRI>
+        <Literal xml:lang="it">Carta &quot;Passo Temporale&quot; inserita da Davide nel suo Mazzo RossoVerde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaPosseduta_PassoTemporale_Davide</IRI>
+        <Literal xml:lang="it">Passo Temporale di Davide</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CartaUnità</IRI>
+        <Literal xml:lang="it">Carta che rappresenta un&apos;unità. Una carta unità è sempre dotata di un attacco e di una difesa, può attaccare e se la difesa arriva a zero (per qualsiasi motivo), l&apos;unità muore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CartaUnità</IRI>
+        <Literal xml:lang="it">Carta unità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CollezioneCarte</IRI>
+        <Literal xml:lang="it">Classe che rappresenta la collezione di carte una Persona. E&apos; unica per Persona, cioè non distingue tra le carte appartenenti a i diversi CCG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CollezioneCarte</IRI>
+        <Literal xml:lang="it">Collezione di carte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#related"/>
+        <IRI>CollezioneCarte</IRI>
+        <IRI>http://dbpedia.org/resource/Playing_card</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Collezionista</IRI>
+        <Literal xml:lang="it">Persona che vuole collezionare carte da uno o più CCG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Collezionista</IRI>
+        <Literal xml:lang="it">Collezionista di carte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#related"/>
+        <IRI>Collezionista</IRI>
+        <IRI>http://dbpedia.org/resource/Category:Collectors</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Costo</IRI>
+        <Literal xml:lang="it">Costo di una carta o dell&apos;abilità di una carta in un gioco di carte collezionabili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Costo</IRI>
+        <Literal xml:lang="it">Costo carta o abilità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoLOR_3</IRI>
+        <Literal xml:lang="it">Costo LOR di 3 mana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoLOR_3</IRI>
+        <Literal xml:lang="it">Costo LOR 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoLOR_4</IRI>
+        <Literal xml:lang="it">Costo LOR di 4 mana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoLOR_4</IRI>
+        <Literal xml:lang="it">Costo LOR 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoLOR_5</IRI>
+        <Literal xml:lang="it">Costo LOR di 5 mana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoLOR_5</IRI>
+        <Literal xml:lang="it">Costo LOR 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_0</IRI>
+        <Literal xml:lang="it">Costo MTG di 0 mana qualsiasi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_0</IRI>
+        <Literal xml:lang="it">Costo MTG 0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_1G</IRI>
+        <Literal xml:lang="it">Costo MTG di un mana qualsiasi e un mana verde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_1G</IRI>
+        <Literal xml:lang="it">Costo MTG {1}{G}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_1U</IRI>
+        <Literal xml:lang="it">Costo MTG di un mana qualsiasi e un mana blu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_1U</IRI>
+        <Literal xml:lang="it">Costo MTG {1}{U}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_1W</IRI>
+        <Literal xml:lang="it">Costo MTG di un mana qualsiasi e un mana bianco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_1W</IRI>
+        <Literal xml:lang="it">Costo MTG {1}{W}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_2G</IRI>
+        <Literal xml:lang="it">Costo MTG di due mana qualsiasi e un mana verde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_2G</IRI>
+        <Literal xml:lang="it">Costo MTG {2}{G}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_G</IRI>
+        <Literal xml:lang="it">Costo MTG di un mana verde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_G</IRI>
+        <Literal xml:lang="it">Costo MTG {G}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>CostoMTG_R</IRI>
+        <Literal xml:lang="it">Costo MTG di un mana rosso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>CostoMTG_R</IRI>
+        <Literal xml:lang="it">Costo MTG {R}</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Formato</IRI>
+        <Literal xml:lang="it">Insieme di regole di costruzione dei mazzi che vengono applicate in ambito dei tornei sanzionati o anche del gioco tra amici per imporre limiti alla composizione dei mazzi.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Formato</IRI>
+        <Literal xml:lang="it">Formato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>FormatoMTGModern</IRI>
+        <Literal xml:lang="it">Formato sanzionato di MTG chiamato &quot;Modern&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FormatoMTGModern</IRI>
+        <Literal xml:lang="it">Modern</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Giocatore</IRI>
+        <Literal xml:lang="it">Persona che vuole costruire Mazzi per giocare partita di uno o più CCG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Giocatore</IRI>
+        <Literal xml:lang="it">Giocatore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:subclassOf"/>
+        <IRI>Giocatore</IRI>
+        <IRI>http://dbpedia.org/resource/Player_(cards)</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GiocatoreDavide</IRI>
+        <Literal xml:lang="it">Persona che vuole giocare a MTG e si chiama Davide</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GiocatoreDavide</IRI>
+        <Literal xml:lang="it">Davide</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GiocoCarteCollezionabili</IRI>
+        <Literal xml:lang="it">Gioco di carte collezionabili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GiocoCarteCollezionabili</IRI>
+        <Literal xml:lang="it">Gioco di carte collezionabili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>LegendsOfRuneterra</IRI>
+        <Literal xml:lang="it">Gioco di carte collezionabili Legends of Runeterra (LOR)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>LegendsOfRuneterra</IRI>
+        <Literal xml:lang="it">Legends of Runeterra</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>LivelloRarità</IRI>
+        <Literal xml:lang="it">Livello di rarità di una carta. Più è alto e più la carta è difficile da trovare e potente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>LivelloRarità</IRI>
+        <Literal xml:lang="it">Livello di rarità di una carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>MagicTheGathering</IRI>
+        <Literal xml:lang="it">Gioco di carte collezionabili Magic The Gathering (MTG)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MagicTheGathering</IRI>
+        <Literal xml:lang="it">Magic the Gathering</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Mazzo</IRI>
+        <Literal xml:lang="it">Classe che rappresenta un mazzo di carte appartenenti a un solo CCG di una persona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Mazzo</IRI>
+        <Literal xml:lang="it">Mazzo personalizzato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#related"/>
+        <IRI>Mazzo</IRI>
+        <IRI>http://dbpedia.org/resource/Playing_card</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <IRI>MazzoDavide_1</IRI>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>MazzoDavide_1</IRI>
+        <Literal xml:lang="it">Un mazzo di Davide, che si chiama RossoVerde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MazzoDavide_1</IRI>
+        <Literal xml:lang="it">Mazzo rosso-verde</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <IRI>MazzoDavide_2</IRI>
+        <IRI>CartaPosseduta_OrsoGrizzly_Davide2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <IRI>MazzoDavide_2</IRI>
+        <IRI>CartaPosseduta_PassoTemporale_Davide</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>MazzoDavide_2</IRI>
+        <Literal xml:lang="it">Un mazzo di Davide che si chiama Verde Blu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MazzoDavide_2</IRI>
+        <Literal xml:lang="it">Mazzo verde-blu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Persona</IRI>
+        <Literal xml:lang="it">Persona che ha qualche interesse nei giochi di carte collezionabili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Persona</IRI>
+        <Literal xml:lang="it">Persona interessata ai CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RaritàComune</IRI>
+        <Literal xml:lang="it">Rarità di carte di CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RaritàComune</IRI>
+        <Literal xml:lang="it">Rarità Comune</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RaritàEpica</IRI>
+        <Literal xml:lang="it">Rarità di carte di CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RaritàEpica</IRI>
+        <Literal xml:lang="it">Rarità Epica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RaritàMitica</IRI>
+        <Literal xml:lang="it">Rarità di carte di CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RaritàMitica</IRI>
+        <Literal xml:lang="it">Rarità Mitica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RaritàNonComune</IRI>
+        <Literal xml:lang="it">Rarità di carte di CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RaritàNonComune</IRI>
+        <Literal xml:lang="it">Rarità Non Comune</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>RaritàRara</IRI>
+        <Literal xml:lang="it">Rarità di carte di CCG</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RaritàRara</IRI>
+        <Literal xml:lang="it">Rarità Rara</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Set</IRI>
+        <Literal xml:lang="it">Uno dei potenzialmente molteplici set in cui è stata stampata questa carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Set</IRI>
+        <Literal xml:lang="it">Set di una carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SetMTGDecimaEdizione</IRI>
+        <Literal xml:lang="it">Set di MTG che si chiama &quot;Decima Edizione&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SetMTGDecimaEdizione</IRI>
+        <Literal xml:lang="it">Set MTG 10E</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SetMTGMagic2010</IRI>
+        <Literal xml:lang="it">Set di MTG che si chiama &quot;Magic 2012&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SetMTGMagic2010</IRI>
+        <Literal xml:lang="it">Set MTG M10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>abilitàDiCarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica in quali carte si trovi una determinata abilità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>abilitàDiCarta</IRI>
+        <Literal xml:lang="it">abilità di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>appartieneACollezione</IRI>
+        <Literal xml:lang="it">Relazione che specifica a quale Collezione appartenga una CartaPosseduta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>appartieneACollezione</IRI>
+        <Literal xml:lang="it">inserita in Collezione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>appartieneAMazzo</IRI>
+        <Literal xml:lang="it">Relazione che specifica a quale Mazzo appartenga una CartaPosseduta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>appartieneAMazzo</IRI>
+        <Literal xml:lang="it">inserita in Mazzo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cartaNonLegaleIn</IRI>
+        <Literal xml:lang="it">Proprietà che specifica che una carta non è legale in un certo formato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>cartaNonLegaleIn</IRI>
+        <Literal xml:lang="it">non legale in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>compostoDa</IRI>
+        <Literal xml:lang="it">Proprietà che specifica una stringa che rappresenta il costo di un&apos;abilità o di una carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>compostoDa</IRI>
+        <Literal xml:lang="it">composto da</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>costoAbilità</IRI>
+        <Literal xml:lang="it">Relazione che specifica quale costo abbia un&apos;abilità.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>costoAbilità</IRI>
+        <Literal xml:lang="it">costo di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>dannoAbilita</IRI>
+        <Literal xml:lang="it">Proprietà che specifica quanto danno infligga un&apos;abilità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>dannoAbilita</IRI>
+        <Literal xml:lang="it">fa danno</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>faRiferimentoACarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica a quale carta faccia riferimento un oggetto CartaPosseduta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>faRiferimentoACarta</IRI>
+        <Literal xml:lang="it">fa riferimento a Carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>faRiferimentoAGioco</IRI>
+        <Literal xml:lang="it">Relazione di appartenenza di un oggetto non GiocoCarteCollezionabili ad un dato gioco di carte collezionabili.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>faRiferimentoAGioco</IRI>
+        <Literal xml:lang="it">appartiene a Gioco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haAbilità</IRI>
+        <Literal xml:lang="it">Relazione che specifica quali abilità abbia una determinata carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haAbilità</IRI>
+        <Literal xml:lang="it">ha Abilità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haAttacco</IRI>
+        <Literal xml:lang="it">Proprietà che specifica a quanto ammonta l&apos;attacco di un&apos;Unità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haAttacco</IRI>
+        <Literal xml:lang="it">ha attacco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haCaratteristica</IRI>
+        <Literal xml:lang="it">Proprietà che specifica una caratteristica di una carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haCaratteristica</IRI>
+        <Literal xml:lang="it">caratteristica di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haCosto</IRI>
+        <Literal xml:lang="it">Relazione che specifica quale sia il costo di ua carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haCosto</IRI>
+        <Literal xml:lang="it">ha Costo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haDifesa</IRI>
+        <Literal xml:lang="it">Proprietà che specifica a quanto ammonta la difesa di un&apos;Unità.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haDifesa</IRI>
+        <Literal xml:lang="it">ha difesa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haImmagine</IRI>
+        <Literal xml:lang="it">Proprietà che specifica un URI dove è possibile visualizzare un&apos;immagine della Carta di riferimento.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haImmagine</IRI>
+        <Literal xml:lang="it">ha immagine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haNome</IRI>
+        <Literal xml:lang="it">Proprietà che definisce il nome di un oggetto.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haNome</IRI>
+        <Literal xml:lang="it">ha nome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haRarità</IRI>
+        <Literal xml:lang="it">Relazione che specifica l&apos;ultimo livello di rarità che è stato assegnato a una carta. Non tiene conto del fatto che la rarità possa essere modificata da un set all&apos;altro, perché l&apos;unica che conta è l&apos;ultima assegnata.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haRarità</IRI>
+        <Literal xml:lang="it">ha Rarità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haSet</IRI>
+        <Literal xml:lang="it">Relazione che assegna a una carta uno dei set in cui è stata stampata.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haSet</IRI>
+        <Literal xml:lang="it">stampata in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>haVelocita</IRI>
+        <Literal xml:lang="it">Proprietà che specifica la velocità di una carta non permanente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>haVelocita</IRI>
+        <Literal xml:lang="it">ha velocità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>interagisceCon</IRI>
+        <Literal xml:lang="it">Relazione che specifica quali carte interagiscono con una determinata carta. E&apos; simmetrica e transitiva.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>interagisceCon</IRI>
+        <Literal xml:lang="it">Carta interagisce con Carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>mazzoNonLegaleIn</IRI>
+        <Literal xml:lang="it">Relazione che specifica un formato in cui non il mazzo in questione non è legale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>mazzoNonLegaleIn</IRI>
+        <Literal xml:lang="it">non legale in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>mazzoPensatoPer</IRI>
+        <Literal xml:lang="it">Relazione che specifica in quale Formato il possessore del Mazzo intende utilizzarlo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>mazzoPensatoPer</IRI>
+        <Literal xml:lang="it">pensato per</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>nomeCarta</IRI>
+        <Literal xml:lang="it">Proprietà che specifica il nome di una carta all&apos;interno del suo gioco.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>nomeCarta</IRI>
+        <Literal xml:lang="it">Nome carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>nomeGioco</IRI>
+        <Literal xml:lang="it">Nome di un gioco di carte collezionabili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>nomeGioco</IRI>
+        <Literal xml:lang="it">Nome gioco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>nominaCarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica quali carte vengono nominate nel testo di un&apos;abilità.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>nominaCarta</IRI>
+        <Literal xml:lang="it">nomina Carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>possiede</IRI>
+        <Literal xml:lang="it">Relazione che specifica quale Collezione o Mazzo possiede una Persona.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>possiede</IRI>
+        <Literal xml:lang="it">possiede</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>possiedeCarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica quali oggetti CartaPosseduta appartengono a una Persona.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>possiedeCarta</IRI>
+        <Literal xml:lang="it">possiede Carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>quantitaCarta</IRI>
+        <Literal xml:lang="it">Proprietà che specifica il numero di copie di una Carta inserita in un Mazzo o in una Collezione.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>quantitaCarta</IRI>
+        <Literal xml:lang="it">numero copie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>sottotipoCarta</IRI>
+        <Literal xml:lang="it">Proprietà che specifica uno o più sottotipi di una determinata carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>sottotipoCarta</IRI>
+        <Literal xml:lang="it">ha sottotipo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>stampataPiuVolte</IRI>
+        <Literal xml:lang="it">Proprietà che specifica se la Carta sia mai stata ristampata o meno.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>stampataPiuVolte</IRI>
+        <Literal xml:lang="it">ristampa?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>testoAbilità</IRI>
+        <Literal xml:lang="it">Proprietà che specifica il testo di un&apos;abilità.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>testoAbilità</IRI>
+        <Literal xml:lang="it">ha testo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>tipoCarta</IRI>
+        <Literal xml:lang="it">Proprietà che specifica il tipo di una carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>tipoCarta</IRI>
+        <Literal xml:lang="it">ha tipo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola</IRI>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola</IRI>
+        <Literal xml:lang="it">Carta &quot;Onore dei Puri&quot; inserita da Nicola nella sua collezione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola</IRI>
+        <Literal xml:lang="it">Onore dei puri di Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola</IRI>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola</IRI>
+        <Literal xml:lang="it">Carta &quot;Ornitottero&quot; inserita da Nicola nella sua collezione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola</IRI>
+        <Literal xml:lang="it">Ornitottero di Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+        <Literal xml:lang="it">La Collezione di carte di Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola</IRI>
+        <Literal xml:lang="it">Collezione di Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola</IRI>
+        <Literal xml:lang="it">Persona che colleziona carte e che si chiama Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola</IRI>
+        <Literal xml:lang="it">Nicola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander</IRI>
+        <Literal xml:lang="it">Formato for fun di MTG chiamato &quot;Commander&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander</IRI>
+        <Literal xml:lang="it">Commander</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica uno degli oggetti CartaPosseduta che è stato inserito in una Collezione.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta</IRI>
+        <Literal xml:lang="it">contiene Carta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta</IRI>
+        <Literal xml:lang="it">Relazione che specifica uno degli oggetti CartaPosseduta che è stato inserito in un Mazzo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta</IRI>
+        <Literal xml:lang="it">contiene Carta</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
