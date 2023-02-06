@@ -1,0 +1,1942 @@
+@prefix : <http://www.semanticweb.org/ModSem2022/ccgo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ModSem2022/ccgo/> .
+
+<http://www.semanticweb.org/ModSem2022/ccgo/> rdf:type owl:Ontology ;
+                                               <http://purl.org/dc/elements/1.1/creator> "Davide Mauri" ;
+                                               <http://purl.org/dc/elements/1.1/date> "02/01/2023" ;
+                                               <http://purl.org/dc/elements/1.1/description> "OntologiaGiochiCarteCollezionabili è stata pensata per modellare giochi di carte collezionabili (CCG) come Magic: The Gathering. Il suo scopo è fornire un modello generale che possa essere utilizzato nella costruzione di basi di dati."@it ;
+                                               <http://purl.org/dc/elements/1.1/title> "OntologiaGiochiCarteCollezionabili"@it ;
+                                               <http://purl.org/vocab/vann/preferredNamepspaceUri> "http://www.semanticweb.org/ModSem2022/ccgo"^^xsd:anyURI ;
+                                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "ccgo" ;
+                                               rdfs:label "Ontologia per Giochi di Carte collezionabili"@it .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamepspaceUri
+<http://purl.org/vocab/vann/preferredNamepspaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#subclassOf
+rdfs:subclassOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+<http://www.w3.org/2004/02/skos/core#related> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/abilitàDiCarta
+:abilitàDiCarta rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf [ owl:inverseOf :haCaratteristica
+                                   ] ;
+                owl:inverseOf :haAbilità ;
+                rdfs:comment "Relazione che specifica in quali carte si trovi una determinata abilità"@it ;
+                rdfs:label "abilità di"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/appartieneACollezione
+:appartieneACollezione rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> ,
+                                          [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                          ] ;
+                       owl:inverseOf <http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta> ;
+                       rdfs:domain :CartaPosseduta ;
+                       rdfs:range :CollezioneCarte ;
+                       rdfs:comment "Relazione che specifica a quale Collezione appartenga una CartaPosseduta."@it ;
+                       rdfs:label "inserita in Collezione"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/appartieneAMazzo
+:appartieneAMazzo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> ,
+                                     [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                     ] ;
+                  owl:inverseOf <http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta> ;
+                  rdfs:domain :CartaPosseduta ;
+                  rdfs:range :Mazzo ;
+                  rdfs:comment "Relazione che specifica a quale Mazzo appartenga una CartaPosseduta."@it ;
+                  rdfs:label "inserita in Mazzo"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/cartaNonLegaleIn
+:cartaNonLegaleIn rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Carta ;
+                  rdfs:range :Formato ;
+                  rdfs:comment "Proprietà che specifica che una carta non è legale in un certo formato."@it ;
+                  rdfs:label "non legale in"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/costoAbilità
+:costoAbilità rdf:type owl:ObjectProperty ;
+              rdfs:domain :Abilità ;
+              rdfs:range :Costo ;
+              rdfs:comment "Relazione che specifica quale costo abbia un'abilità."@it ;
+              rdfs:label "costo di"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/faRiferimentoACarta
+:faRiferimentoACarta rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain :CartaPosseduta ;
+                     rdfs:range :Carta ;
+                     rdfs:comment "Relazione che specifica a quale carta faccia riferimento un oggetto CartaPosseduta."@it ;
+                     rdfs:label "fa riferimento a Carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/faRiferimentoAGioco
+:faRiferimentoAGioco rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain owl:Thing ;
+                     rdfs:range <http://dbpedia.org/resource/Collectible_card_game> ,
+                                :GiocoCarteCollezionabili ;
+                     rdfs:comment "Relazione di appartenenza di un oggetto non GiocoCarteCollezionabili ad un dato gioco di carte collezionabili."@it ;
+                     rdfs:label "appartiene a Gioco"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haAbilità
+:haAbilità rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :haCaratteristica ;
+           rdfs:domain :Carta ;
+           rdfs:range :Abilità ;
+           rdfs:comment "Relazione che specifica quali abilità abbia una determinata carta."@it ;
+           rdfs:label "ha Abilità"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haCaratteristica
+:haCaratteristica rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Carta ;
+                  rdfs:range :CaratteristicaCarta ;
+                  rdfs:comment "Proprietà che specifica una caratteristica di una carta"@it ;
+                  rdfs:label "caratteristica di"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haCosto
+:haCosto rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :haCaratteristica ;
+         rdfs:domain :Carta ;
+         rdfs:range :Costo ;
+         rdfs:comment "Relazione che specifica quale sia il costo di ua carta."@it ;
+         rdfs:label "ha Costo"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haRarità
+:haRarità rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :haCaratteristica ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Carta ;
+          rdfs:range :LivelloRarità ;
+          rdfs:comment "Relazione che specifica l'ultimo livello di rarità che è stato assegnato a una carta. Non tiene conto del fatto che la rarità possa essere modificata da un set all'altro, perché l'unica che conta è l'ultima assegnata."@it ;
+          rdfs:label "ha Rarità"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haSet
+:haSet rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :haCaratteristica ;
+       rdfs:domain :Carta ;
+       rdfs:range :Set ;
+       rdfs:comment "Relazione che assegna a una carta uno dei set in cui è stata stampata."@it ;
+       rdfs:label "stampata in"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/interagisceCon
+:interagisceCon rdf:type owl:ObjectProperty ;
+                owl:inverseOf :interagisceCon ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain :Carta ;
+                rdfs:range :Carta ;
+                owl:propertyChainAxiom ( :haAbilità
+                                         :nominaCarta
+                                       ) ;
+                rdfs:comment "Relazione che specifica quali carte interagiscono con una determinata carta. E' simmetrica e transitiva."@it ;
+                rdfs:label "Carta interagisce con Carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/mazzoNonLegaleIn
+:mazzoNonLegaleIn rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Mazzo ;
+                  rdfs:range :Formato ;
+                  owl:propertyChainAxiom ( <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                           <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent>
+                                           :cartaNonLegaleIn
+                                         ) ;
+                  rdfs:comment "Relazione che specifica un formato in cui non il mazzo in questione non è legale."@it ;
+                  rdfs:label "non legale in"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/mazzoPensatoPer
+:mazzoPensatoPer rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Mazzo ;
+                 rdfs:range :Formato ;
+                 rdfs:comment "Relazione che specifica in quale Formato il possessore del Mazzo intende utilizzarlo."@it ;
+                 rdfs:label "pensato per"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/nominaCarta
+:nominaCarta rdf:type owl:ObjectProperty ;
+             rdfs:domain :Abilità ;
+             rdfs:range :Carta ;
+             rdfs:comment "Relazione che specifica quali carte vengono nominate nel testo di un'abilità."@it ;
+             rdfs:label "nomina Carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/possiede
+:possiede rdf:type owl:ObjectProperty ;
+          rdfs:domain :Persona ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :CollezioneCarte
+                                     :Mazzo
+                                   )
+                     ] ;
+          rdfs:comment "Relazione che specifica quale Collezione o Mazzo possiede una Persona."@it ;
+          rdfs:label "possiede"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/possiedeCarta
+:possiedeCarta rdf:type owl:ObjectProperty ;
+               rdfs:domain :Persona ;
+               rdfs:range :CartaPosseduta ;
+               owl:propertyChainAxiom ( :possiede
+                                        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem>
+                                      ) ;
+               rdfs:comment "Relazione che specifica quali oggetti CartaPosseduta appartengono a una Persona."@it ;
+               rdfs:label "possiede Carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/setCartaPosseduta
+:setCartaPosseduta rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :CartaPosseduta ;
+                   rdfs:range :Set ;
+                   rdfs:comment "Proprietà che specifica di quale Set sia la carta inserita da un giocatore nel proprio mazzo o nella propria collezione"@it ;
+                   rdfs:label "set"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta
+<http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> ,
+                                                                                         [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf>
+                                                                                         ] ;
+                                                                      rdfs:comment "Relazione che specifica uno degli oggetti CartaPosseduta che è stato inserito in una Collezione."@it ;
+                                                                      rdfs:label "contiene Carta"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta
+<http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> ,
+                                                                                    [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf>
+                                                                                    ] ;
+                                                                 rdfs:comment "Relazione che specifica uno degli oggetti CartaPosseduta che è stato inserito in un Mazzo."@it ;
+                                                                 rdfs:label "contiene Carta"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/compostoDa
+:compostoDa rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Costo ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Proprietà che specifica una stringa che rappresenta il costo di un'abilità o di una carta."@it ;
+            rdfs:label "composto da"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/dannoAbilita
+:dannoAbilita rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Abilità ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "Proprietà che specifica quanto danno infligga un'abilità"@it ;
+              rdfs:label "fa danno"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haAttacco
+:haAttacco rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :CartaUnità ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "Proprietà che specifica a quanto ammonta l'attacco di un'Unità"@it ;
+           rdfs:label "ha attacco"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haDifesa
+:haDifesa rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :CartaUnità ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Proprietà che specifica a quanto ammonta la difesa di un'Unità."@it ;
+          rdfs:label "ha difesa"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haImmagine
+:haImmagine rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Carta ;
+            rdfs:range xsd:anyURI ;
+            rdfs:comment "Proprietà che specifica un URI dove è possibile visualizzare un'immagine della Carta di riferimento."@it ;
+            rdfs:label "ha immagine"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haNome
+:haNome rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Proprietà che definisce il nome di un oggetto."@it ;
+        rdfs:label "ha nome"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/haVelocita
+:haVelocita rdf:type owl:DatatypeProperty ;
+            rdfs:domain :CartaNonPermanente ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Proprietà che specifica la velocità di una carta non permanente."@it ;
+            rdfs:label "ha velocità"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/nomeCarta
+:nomeCarta rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :haNome ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Carta ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Proprietà che specifica il nome di una carta all'interno del suo gioco."@it ;
+           rdfs:label "Nome carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/nomeGioco
+:nomeGioco rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :haNome ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain <http://dbpedia.org/resource/Collectible_card_game> ,
+                       :GiocoCarteCollezionabili ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Nome di un gioco di carte collezionabili"@it ;
+           rdfs:label "Nome gioco"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/quantitaCarta
+:quantitaCarta rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :CartaPosseduta ;
+               rdfs:range xsd:integer ;
+               rdfs:comment "Proprietà che specifica il numero di copie di una Carta inserita in un Mazzo o in una Collezione."@it ;
+               rdfs:label "numero copie"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/sottotipoCarta
+:sottotipoCarta rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Carta ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Proprietà che specifica uno o più sottotipi di una determinata carta."@it ;
+                rdfs:label "ha sottotipo"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/stampataPiuVolte
+:stampataPiuVolte rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Carta ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Proprietà che specifica se la Carta sia mai stata ristampata o meno."@it ;
+                  rdfs:label "ristampa?"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/testoAbilità
+:testoAbilità rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Abilità ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Proprietà che specifica il testo di un'abilità."@it ;
+              rdfs:label "ha testo"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/tipoCarta
+:tipoCarta rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Carta ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Proprietà che specifica il tipo di una carta."@it ;
+           rdfs:label "ha tipo"@it .
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+<http://xmlns.com/foaf/0.1/givenName> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/resource/Collectible_card_game
+<http://dbpedia.org/resource/Collectible_card_game> rdf:type owl:Class ;
+                                                    owl:equivalentClass :GiocoCarteCollezionabili .
+
+
+###  http://dbpedia.org/resource/Playing_card
+<http://dbpedia.org/resource/Playing_card> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item
+<http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Abilità
+:Abilità rdf:type owl:Class ;
+         rdfs:subClassOf :CaratteristicaCarta ;
+         rdfs:comment "Un'abilità è una capacità speciale di una carta che può alterare il normale funzionamento del gioco o influenzare altre carte in vari modi. Ogni carta può possedere un qualsiasi numero di abilità (in genere limitato solamente dalla dimensione della carta fisica/virtuale)."@it ;
+         rdfs:label "Abilità carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàAttivata
+:AbilitàAttivata rdf:type owl:Class ;
+                 rdfs:subClassOf :Abilità ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :costoAbilità ;
+                                   owl:someValuesFrom :Costo
+                                 ] ;
+                 rdfs:comment "Abilità che può essere attivata a comando. Richiede il pagamento di un costo per l'attivazione (ma non sono le uniche abilità che possono avere un costo associato)."@it ;
+                 rdfs:label "Abilità attivata"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàInnescata
+:AbilitàInnescata rdf:type owl:Class ;
+                  rdfs:subClassOf :Abilità ;
+                  rdfs:comment "Abilità che si innesca automaticamente al verificarsi di una determinata condizione. In genere contengono le parole \"Quando\", \"Ogniqualvolta\", ecc."@it ;
+                  rdfs:label "Abilità Innescata"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàParolaChiave
+:AbilitàParolaChiave rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Abilità
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :haNome ;
+                                                                  owl:someValuesFrom xsd:string
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Abilità ;
+                     owl:disjointWith :CartaPosseduta ,
+                                      :Costo ;
+                     rdfs:comment "Abilità di una carta rappresentata da una parola chiave. Sulle carte, generalmente, si trova solo tale parola chiave, il cui funzionamento è però descritto da un testo più lungo."@it ;
+                     rdfs:label "Abilità Parola Chiave"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàStatica
+:AbilitàStatica rdf:type owl:Class ;
+                rdfs:subClassOf :Abilità ;
+                rdfs:comment "Abilità di una carta che ha un effetto continuo e non variabile in un certo interallo di tempo. Generalmente le abilità statiche sono legate ai permanenti, anche se non sempre è così."@it ;
+                rdfs:label "Abilità statica"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CaratteristicaCarta
+:CaratteristicaCarta rdf:type owl:Class ;
+                     rdfs:comment "Caratteristica o dettaglio di una specifica carta di un CCG."@it ;
+                     rdfs:label "Caratteristica di una carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Carta
+:Carta rdf:type owl:Class ;
+       rdfs:subClassOf <http://dbpedia.org/resource/Playing_card> ;
+       rdfs:comment "Carta di un CCG"@it ;
+       rdfs:label "Carta di un CCG."@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaAusiliare
+:CartaAusiliare rdf:type owl:Class ;
+                rdfs:subClassOf :CartaPermanente ;
+                owl:disjointWith :CartaNonPermanente ,
+                                 :CartaUnità ;
+                rdfs:comment "Carta permanente che non rappresenta un'unità, ma un altro tipo di carta con effetto continuo sul gioco. A seconda del CCG seguono regole diverse."@it ;
+                rdfs:label "Carta ausiliare"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaNonPermanente
+:CartaNonPermanente rdf:type owl:Class ;
+                    rdfs:subClassOf :Carta ;
+                    owl:disjointWith :CartaPermanente ,
+                                     :CartaUnità ;
+                    rdfs:comment "Tipo di carta che esaurisce il suo effetto quando viene giocata e non rimane sul campo di gioco, ma viene scartata."@it ;
+                    rdfs:label "Carta non permanente"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaPermanente
+:CartaPermanente rdf:type owl:Class ;
+                 rdfs:subClassOf :Carta ;
+                 owl:disjointUnionOf ( :CartaAusiliare
+                                       :CartaUnità
+                                     ) ;
+                 rdfs:comment "Carta che permane sul campo di gioco dopo essere stata giocata. Le sue abilità hanno effetto fintanto che essa rimane in gioco."@it ;
+                 rdfs:label "Carta permanente"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaPosseduta
+:CartaPosseduta rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ;
+                owl:disjointWith :CollezioneCarte ,
+                                 :Mazzo ;
+                rdfs:comment "Una carta posseduta da una Persona che l'ha inserita o in un Mazzo o nella sua Collezione."@it ;
+                rdfs:label "Carta in un Mazzo o Collezione"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaUnità
+:CartaUnità rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :CartaPermanente
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :haAttacco ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onDataRange xsd:integer
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :haDifesa ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onDataRange xsd:integer
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :CartaPermanente ;
+            rdfs:comment "Carta che rappresenta un'unità. Una carta unità è sempre dotata di un attacco e di una difesa, può attaccare e se la difesa arriva a zero (per qualsiasi motivo), l'unità muore."@it ;
+            rdfs:label "Carta unità"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CollezioneCarte
+:CollezioneCarte rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ;
+                 rdfs:comment "Classe che rappresenta la collezione di carte una Persona. E' unica per Persona, cioè non distingue tra le carte appartenenti a i diversi CCG."@it ;
+                 rdfs:label "Collezione di carte"@it ;
+                 <http://www.w3.org/2004/02/skos/core#related> <http://dbpedia.org/resource/Playing_card> .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Collezionista
+:Collezionista rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :possiede ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :CollezioneCarte
+                                   ] ;
+               rdfs:subClassOf :Persona ;
+               rdfs:comment "Persona che vuole collezionare carte da uno o più CCG."@it ;
+               rdfs:label "Collezionista di carte"@it ;
+               <http://www.w3.org/2004/02/skos/core#related> <http://dbpedia.org/resource/Category:Collectors> .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Costo
+:Costo rdf:type owl:Class ;
+       rdfs:subClassOf :CaratteristicaCarta ;
+       rdfs:comment "Costo di una carta o dell'abilità di una carta in un gioco di carte collezionabili"@it ;
+       rdfs:label "Costo carta o abilità"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Formato
+:Formato rdf:type owl:Class ;
+         rdfs:comment "Insieme di regole di costruzione dei mazzi che vengono applicate in ambito dei tornei sanzionati o anche del gioco tra amici per imporre limiti alla composizione dei mazzi."@it ;
+         rdfs:label "Formato"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Giocatore
+:Giocatore rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :possiede ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Mazzo
+                               ] ;
+           rdfs:subClassOf :Persona ;
+           rdfs:comment "Persona che vuole costruire Mazzi per giocare partita di uno o più CCG."@it ;
+           rdfs:label "Giocatore"@it ;
+           rdfs:subclassOf <http://dbpedia.org/resource/Player_(cards)> .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/GiocoCarteCollezionabili
+:GiocoCarteCollezionabili rdf:type owl:Class ;
+                          rdfs:comment "Gioco di carte collezionabili"@it ;
+                          rdfs:label "Gioco di carte collezionabili"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/LivelloRarità
+:LivelloRarità rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( :RaritàComune
+                                                 :RaritàEpica
+                                                 :RaritàMitica
+                                                 :RaritàNonComune
+                                                 :RaritàRara
+                                               )
+                                   ] ;
+               rdfs:subClassOf :CaratteristicaCarta ;
+               rdfs:comment "Livello di rarità di una carta. Più è alto e più la carta è difficile da trovare e potente."@it ;
+               rdfs:label "Livello di rarità di una carta"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Mazzo
+:Mazzo rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ;
+       rdfs:comment "Classe che rappresenta un mazzo di carte appartenenti a un solo CCG di una persona"@it ;
+       rdfs:label "Mazzo personalizzato"@it ;
+       <http://www.w3.org/2004/02/skos/core#related> <http://dbpedia.org/resource/Playing_card> .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Persona
+:Persona rdf:type owl:Class ;
+         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+         rdfs:comment "Persona che ha qualche interesse nei giochi di carte collezionabili"@it ;
+         rdfs:label "Persona interessata ai CCG"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/Set
+:Set rdf:type owl:Class ;
+     rdfs:subClassOf :CaratteristicaCarta ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :haNome ;
+                       owl:someValuesFrom xsd:string
+                     ] ;
+     rdfs:comment "Uno dei potenzialmente molteplici set in cui è stata stampata questa carta."@it ;
+     rdfs:label "Set di una carta"@it .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàAumentoLivelloVayne
+:AbilitàAumentoLivelloVayne rdf:type owl:NamedIndividual ,
+                                     :Abilità ,
+                                     :AbilitàInnescata ,
+                                     :CaratteristicaCarta ;
+                            :abilitàDiCarta :CartaLORVayneLvl1 ;
+                            :nominaCarta :CartaLORVayneLvl2 ;
+                            :testoAbilità "Aumento di livello quando ti ho visto attaccare 4 volte." ;
+                            rdfs:comment "Abilità innescata che permette a Vayne di aumentare di livello."@it ;
+                            rdfs:label "Abilità per l'aumento di livello di Vayne"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàBarriera
+:AbilitàBarriera rdf:type owl:NamedIndividual ,
+                          :Abilità ,
+                          :AbilitàParolaChiave ,
+                          :CaratteristicaCarta ;
+                 :abilitàDiCarta :CartaLORGuardianoZannaverde ;
+                 :haNome "Barriera" ;
+                 :testoAbilità "Nega i danni successivi che l'unità subirebbe. Dura un turno" ;
+                 rdfs:comment "Abilità di LOR Barriera"@it ;
+                 rdfs:label "Abilità di LOR: Barriera"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàCapriola
+:AbilitàCapriola rdf:type owl:NamedIndividual ,
+                          :Abilità ,
+                          :CaratteristicaCarta ;
+                 :abilitàDiCarta :CartaLORCapriola ;
+                 :testoAbilità "Equipaggia un alleato con un equipaggiamento di costo 2 o meno. L'alleato avvia un attacco gratuito." ;
+                 rdfs:comment "Abilità della carta Capriola"@it ;
+                 rdfs:label "Abilità della carta Capriola"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàCecchinoCieloaperto
+:AbilitàCecchinoCieloaperto rdf:type owl:NamedIndividual ,
+                                     :Abilità ,
+                                     :CaratteristicaCarta ;
+                            :abilitàDiCarta :CartaMTGCecchinaCieloaperto ;
+                            :costoAbilità :CostoMTG_2G ;
+                            :dannoAbilita 1 ;
+                            :testoAbilità "Infliggi un danno a una creatura bersaglio con volare" ;
+                            rdfs:comment "Abilità attivata della carta Cecchino Cieloaperto"@it ;
+                            rdfs:label "Abilità di Cecchino Cieloaperto"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàEsploratore
+:AbilitàEsploratore rdf:type owl:NamedIndividual ,
+                             :Abilità ,
+                             :AbilitàParolaChiave ,
+                             :CaratteristicaCarta ;
+                    :abilitàDiCarta :CartaLORGuardianoZannaverde ;
+                    :haNome "Esploratore" ;
+                    :testoAbilità "La prima volta che le unità Esploratore attaccano da sole in un turno, prepara l'assalto." ;
+                    rdfs:comment "Abilità \"Esploratore\" di alcune carte di LOR"@it ;
+                    rdfs:label "Abilità Esploratore"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàGrandePiazza
+:AbilitàGrandePiazza rdf:type owl:NamedIndividual ,
+                              :Abilità ,
+                              :AbilitàInnescata ,
+                              :CaratteristicaCarta ;
+                     :abilitàDiCarta :CartaLORGrandePiazza ;
+                     :testoAbilità "Quando viene evocato un alleato, forniscigli +1/+0 e Sfidante per questo turno." ;
+                     rdfs:comment "Abilità innescata della carta Grande Piazza"@it ;
+                     rdfs:label "Abilità Grande Piazza"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàMazzaOsso
+:AbilitàMazzaOsso rdf:type owl:NamedIndividual ,
+                           :Abilità ,
+                           :AbilitàStatica ,
+                           :CaratteristicaCarta ;
+                  :abilitàDiCarta :CartaLORMazzaOsso ;
+                  :testoAbilità "+5/+5" ;
+                  rdfs:comment "Abilità statica della carta Mazza d'Osso"@it ;
+                  rdfs:label "Abilità Mazza d'Osso"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàOnoreDeiPuri
+:AbilitàOnoreDeiPuri rdf:type owl:NamedIndividual ,
+                              :Abilità ,
+                              :AbilitàStatica ,
+                              :CaratteristicaCarta ;
+                     :abilitàDiCarta :CartaMTGOnoreDeiPuri ;
+                     :testoAbilità "Le creature bianche che controlli prendono +1/+1" ;
+                     rdfs:comment "Abilità statica della carta Onore dei Puri"@it ;
+                     rdfs:label "Abilità Onore dei Puri"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàRaggiungere
+:AbilitàRaggiungere rdf:type owl:NamedIndividual ,
+                             :Abilità ,
+                             :AbilitàParolaChiave ,
+                             :CaratteristicaCarta ;
+                    :abilitàDiCarta :CartaMTGCecchinaCieloaperto ;
+                    :haNome "Raggiungere" ;
+                    :testoAbilità "Questa creatura può bloccare le creatue con volare." ;
+                    rdfs:comment "Abilità descritta dalla parola chiave Raggiungere"@it ;
+                    rdfs:label "Abilità Raggiungere"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàTurnoExtra
+:AbilitàTurnoExtra rdf:type owl:NamedIndividual ,
+                            :Abilità ,
+                            :CaratteristicaCarta ;
+                   :abilitàDiCarta :CartaMTGPassoTemporale ;
+                   :testoAbilità "Gioca un turno extra dopo questo." ;
+                   rdfs:comment "Abilità che permette di giocare un turno extra"@it ;
+                   rdfs:label "Abilità Turno extra"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàVayne
+:AbilitàVayne rdf:type owl:NamedIndividual ,
+                       :Abilità ,
+                       :AbilitàInnescata ,
+                       :CaratteristicaCarta ;
+              :abilitàDiCarta :CartaLORVayneLvl1 ;
+              :testoAbilità "Quando vengo evocata o all'inizio del turno: Crea una Capriola nella mano. Se ne hai già una copia, riducine il costo di 1." ;
+              rdfs:comment "Abilità della carta Vayne di LOR"@it ;
+              rdfs:label "Abilità di Vayne"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàVayneLvl2
+:AbilitàVayneLvl2 rdf:type owl:NamedIndividual ,
+                           :Abilità ,
+                           :AbilitàInnescata ,
+                           :CaratteristicaCarta ;
+                  :abilitàDiCarta :CartaLORVayneLvl2 ;
+                  :testoAbilità "Quando vengo evocata o all'inizio del turno: Crea una Capriola dicosto 0 nella tua mano. Se ne hai già una copia, riducine il costo a 0." ;
+                  rdfs:comment "Abilità della carta Vayne (lvl 2) di LOR"@it ;
+                  rdfs:label "Abilità Vayne LVL 2"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/AbilitàVolare
+:AbilitàVolare rdf:type owl:NamedIndividual ,
+                        :Abilità ,
+                        :AbilitàParolaChiave ,
+                        :CaratteristicaCarta ;
+               :abilitàDiCarta :CartaMTGOrnitottero ;
+               :haNome "Volare" ;
+               :testoAbilità "Questa creatura non può essere bloccata tranne che dalle creature con volare o raggiungere." ;
+               rdfs:comment "Abilità definita da parola chiave \"Volare\" di MTG"@it ;
+               rdfs:label "Abilità Volare"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORCapriola
+:CartaLORCapriola rdf:type owl:NamedIndividual ,
+                           <http://dbpedia.org/resource/Playing_card> ,
+                           :Carta ;
+                  :haAbilità :AbilitàCapriola ;
+                  :haCaratteristica :AbilitàCapriola ,
+                                    :CostoLOR_4 ;
+                  :haCosto :CostoLOR_4 ;
+                  :interagisceCon :CartaLORCapriola ,
+                                  :CartaLORVayneLvl1 ,
+                                  :CartaLORVayneLvl2 ;
+                  :haNome "Capriola" ;
+                  :nomeCarta "Capriola" ;
+                  :sottotipoCarta "Lento" ;
+                  :tipoCarta "Incantesimo" ;
+                  rdfs:comment "Carta \"Capriola\" di LOR"@it ;
+                  rdfs:label "Carta Capriola di LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORGrandePiazza
+:CartaLORGrandePiazza rdf:type owl:NamedIndividual ,
+                               <http://dbpedia.org/resource/Playing_card> ,
+                               :Carta ;
+                      :haAbilità :AbilitàGrandePiazza ;
+                      :haCaratteristica :AbilitàGrandePiazza ,
+                                        :CostoLOR_3 ,
+                                        :RaritàEpica ;
+                      :haCosto :CostoLOR_3 ;
+                      :haRarità :RaritàEpica ;
+                      :haNome "La Grande Piazza" ;
+                      :nomeCarta "La Grande Piazza" ;
+                      :tipoCarta "Monumento" ;
+                      rdfs:comment "Carta Grande Piazza di LOR"@it ;
+                      rdfs:label "Carta Grande Piazza LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORGuardianoZannaverde
+:CartaLORGuardianoZannaverde rdf:type owl:NamedIndividual ,
+                                      <http://dbpedia.org/resource/Playing_card> ,
+                                      :Carta ,
+                                      :CartaPermanente ,
+                                      :CartaUnità ,
+                                      [ owl:intersectionOf ( :CartaPermanente
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :haAttacco ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:integer
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :haDifesa ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:integer
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :haAttacco ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange xsd:integer
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :haDifesa ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange xsd:integer
+                                      ] ;
+                             :haAbilità :AbilitàBarriera ,
+                                        :AbilitàEsploratore ;
+                             :haCaratteristica :AbilitàBarriera ,
+                                               :AbilitàEsploratore ,
+                                               :CostoLOR_3 ,
+                                               :RaritàComune ;
+                             :haCosto :CostoLOR_3 ;
+                             :haRarità :RaritàComune ;
+                             :haAttacco 2 ;
+                             :haDifesa 2 ;
+                             :haNome "Guardiano di Zannaverde" ;
+                             :nomeCarta "Guardiano di Zannaverde" ;
+                             :sottotipoCarta "Elite" ;
+                             rdfs:comment "Carta \"Guardiano Zannaverde\" di LOR"@it ;
+                             rdfs:label "Carta Guardiano Zannaverde LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORMazzaOsso
+:CartaLORMazzaOsso rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/resource/Playing_card> ,
+                            :Carta ;
+                   :haAbilità :AbilitàMazzaOsso ;
+                   :haCaratteristica :AbilitàMazzaOsso ,
+                                     :CostoLOR_5 ,
+                                     :RaritàComune ;
+                   :haCosto :CostoLOR_5 ;
+                   :haRarità :RaritàComune ;
+                   :haNome "Mazza d'Osso" ;
+                   :nomeCarta "Mazza d'Osso" ;
+                   rdfs:comment "Carta \"Mazza d'Osso\" di LOR"@it ;
+                   rdfs:label "Carta Mazza d'Osso di LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORVayneLvl1
+:CartaLORVayneLvl1 rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/resource/Playing_card> ,
+                            :Carta ,
+                            :CartaPermanente ,
+                            :CartaUnità ;
+                   :faRiferimentoAGioco :LegendsOfRuneterra ;
+                   :haAbilità :AbilitàAumentoLivelloVayne ,
+                              :AbilitàVayne ;
+                   :haCaratteristica :AbilitàAumentoLivelloVayne ,
+                                     :AbilitàVayne ,
+                                     :CostoLOR_3 ;
+                   :haCosto :CostoLOR_3 ;
+                   :interagisceCon :CartaLORCapriola ,
+                                   :CartaLORVayneLvl1 ,
+                                   :CartaLORVayneLvl2 ;
+                   :haAttacco 3 ;
+                   :haDifesa 3 ;
+                   :haNome "Vayne" ;
+                   :nomeCarta "Vayne" ;
+                   :tipoCarta "Campione" ;
+                   rdfs:comment "Carta \"Vayne LVL 1\" di LOR"@it ;
+                   rdfs:label "Carta Vayne LVL 1 LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORVayneLvl2
+:CartaLORVayneLvl2 rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/resource/Playing_card> ,
+                            :Carta ,
+                            :CartaPermanente ,
+                            :CartaUnità ;
+                   :haAbilità :AbilitàVayneLvl2 ;
+                   :haCaratteristica :AbilitàVayneLvl2 ,
+                                     :CostoLOR_3 ;
+                   :haCosto :CostoLOR_3 ;
+                   :interagisceCon :CartaLORCapriola ,
+                                   :CartaLORVayneLvl1 ,
+                                   :CartaLORVayneLvl2 ;
+                   :haAttacco 4 ;
+                   :haDifesa 4 ;
+                   :haNome "Vayne" ;
+                   :nomeCarta "Vayne" ;
+                   rdfs:comment "Carta \"Vayne LVL 2\" di LOR"@it ;
+                   rdfs:label "Carta Vayne LVL 2 LOR"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGCecchinaCieloaperto
+:CartaMTGCecchinaCieloaperto rdf:type owl:NamedIndividual ,
+                                      <http://dbpedia.org/resource/Playing_card> ,
+                                      :Carta ,
+                                      :CartaPermanente ,
+                                      :CartaUnità ,
+                                      [ owl:intersectionOf ( :CartaPermanente
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :haAttacco ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:integer
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :haDifesa ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:integer
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :haAttacco ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange xsd:integer
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :haDifesa ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange xsd:integer
+                                      ] ;
+                             :faRiferimentoAGioco :MagicTheGathering ;
+                             :haAbilità :AbilitàCecchinoCieloaperto ,
+                                        :AbilitàRaggiungere ;
+                             :haCaratteristica :AbilitàCecchinoCieloaperto ,
+                                               :AbilitàRaggiungere ,
+                                               :CostoMTG_G ,
+                                               :RaritàNonComune ;
+                             :haCosto :CostoMTG_G ;
+                             :haRarità :RaritàNonComune ;
+                             :haAttacco 1 ;
+                             :haDifesa 2 ;
+                             :haNome "Cecchina del Cieloaperto" ;
+                             :nomeCarta "Cecchina del Cieloaperto" ;
+                             :sottotipoCarta "Arciere" ,
+                                             "Elfo" ;
+                             rdfs:comment "Carta \"Cecchina Cieloaperto\" di MTG"@it ;
+                             rdfs:label "Carta MTG Cecchina Cieloaperto"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGFulmine
+:CartaMTGFulmine rdf:type owl:NamedIndividual ,
+                          <http://dbpedia.org/resource/Playing_card> ,
+                          :Carta ;
+                 :faRiferimentoAGioco :MagicTheGathering ;
+                 :haCaratteristica :CostoMTG_R ,
+                                   :RaritàNonComune ;
+                 :haCosto :CostoMTG_R ;
+                 :haRarità :RaritàNonComune ;
+                 :haNome "Fulmine" ;
+                 rdfs:comment "Carta \"Fulmine\" di MTG"@it ;
+                 rdfs:label "Carta MTG Fulmine"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGIsola
+:CartaMTGIsola rdf:type owl:NamedIndividual ,
+                        <http://dbpedia.org/resource/Playing_card> ,
+                        :Carta ;
+               :faRiferimentoAGioco :MagicTheGathering ;
+               :haCaratteristica :RaritàComune ;
+               :haRarità :RaritàComune ;
+               :haNome "Isola" ;
+               :nomeCarta "Isola" ;
+               rdfs:comment "Carta \"Isola\" di MTG"@it ;
+               rdfs:label "Carta MTG Isola"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGOnoreDeiPuri
+:CartaMTGOnoreDeiPuri rdf:type owl:NamedIndividual ,
+                               <http://dbpedia.org/resource/Playing_card> ,
+                               :Carta ;
+                      :faRiferimentoAGioco :MagicTheGathering ;
+                      :haAbilità :AbilitàOnoreDeiPuri ;
+                      :haCaratteristica :AbilitàOnoreDeiPuri ,
+                                        :CostoMTG_1W ,
+                                        :RaritàRara ,
+                                        :SetMTGMagic2010 ;
+                      :haCosto :CostoMTG_1W ;
+                      :haRarità :RaritàRara ;
+                      :haSet :SetMTGMagic2010 ;
+                      :haNome "Onore dei Puri" ;
+                      :nomeCarta "Onore dei Puri" ;
+                      :tipoCarta "Incantesimo" ;
+                      rdfs:comment "Carta \"Onore dei Puri\" di MTG"@it ;
+                      rdfs:label "Carta MTG Onore dei Puri"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGOrnitottero
+:CartaMTGOrnitottero rdf:type owl:NamedIndividual ,
+                              <http://dbpedia.org/resource/Playing_card> ,
+                              :Carta ,
+                              :CartaPermanente ,
+                              :CartaUnità ,
+                              [ owl:intersectionOf ( :CartaPermanente
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :haAttacco ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:integer
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :haDifesa ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:integer
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :haAttacco ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :haDifesa ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ;
+                     :faRiferimentoAGioco :MagicTheGathering ;
+                     :haAbilità :AbilitàVolare ;
+                     :haCaratteristica :AbilitàVolare ,
+                                       :CostoMTG_0 ,
+                                       :RaritàComune ,
+                                       :SetMTGDecimaEdizione ,
+                                       :SetMTGMagic2010 ;
+                     :haCosto :CostoMTG_0 ;
+                     :haRarità :RaritàComune ;
+                     :haSet :SetMTGDecimaEdizione ,
+                            :SetMTGMagic2010 ;
+                     :haAttacco 0 ;
+                     :haDifesa 2 ;
+                     :haNome "Ornitottero" ;
+                     :nomeCarta "Ornitottero" ;
+                     :sottotipoCarta "Tottero" ;
+                     :stampataPiuVolte "true"^^xsd:boolean ;
+                     :tipoCarta "Creatura Artefatto" ;
+                     rdfs:comment "Carta \"Ornitottero\" di MTG"@it ;
+                     rdfs:label "Carta MTG Ornitottero"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGOrsoGrizzly
+:CartaMTGOrsoGrizzly rdf:type owl:NamedIndividual ,
+                              <http://dbpedia.org/resource/Playing_card> ,
+                              :Carta ,
+                              :CartaPermanente ,
+                              :CartaUnità ;
+                     :faRiferimentoAGioco :MagicTheGathering ;
+                     :haCaratteristica :CostoMTG_1G ,
+                                       :RaritàComune ,
+                                       :SetMTGDecimaEdizione ,
+                                       :SetMTGMagic2010 ;
+                     :haCosto :CostoMTG_1G ;
+                     :haRarità :RaritàComune ;
+                     :haSet :SetMTGDecimaEdizione ,
+                            :SetMTGMagic2010 ;
+                     :haAttacco 2 ;
+                     :haDifesa 2 ;
+                     :haImmagine "https://cards.scryfall.io/large/front/4/0/409f9b88-f03e-40b6-9883-68c14c37c0de.jpg?1562546736"^^xsd:anyURI ;
+                     :haNome "Orso Grizzly" ;
+                     :nomeCarta "Orso Grizzly" ;
+                     :sottotipoCarta "Orso" ;
+                     :stampataPiuVolte "true"^^xsd:boolean ;
+                     rdfs:comment "Carta \"Orso Grizzly\" di MTG"@it ;
+                     rdfs:label "Carta MTG Orso Grizzly"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGPassoTemporale
+:CartaMTGPassoTemporale rdf:type owl:NamedIndividual ,
+                                 <http://dbpedia.org/resource/Playing_card> ,
+                                 :Carta ,
+                                 :CartaNonPermanente ;
+                        :cartaNonLegaleIn :FormatoMTGModern ;
+                        :faRiferimentoAGioco :MagicTheGathering ;
+                        :haAbilità :AbilitàTurnoExtra ;
+                        :haCaratteristica :AbilitàTurnoExtra ,
+                                          :CostoMTG_1U ,
+                                          :RaritàMitica ;
+                        :haCosto :CostoMTG_1U ;
+                        :haRarità :RaritàMitica ;
+                        :haImmagine "https://cards.scryfall.io/large/front/7/0/70901356-3266-4bd9-aacc-f06c27271de5.jpg?1614638832"^^xsd:anyURI ;
+                        :tipoCarta "Stregoneria" ;
+                        rdfs:comment "Carta \"Passo Temporale\" di MTG"@it ;
+                        rdfs:label "Carta MTG Passo Temporale"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaPosseduta_OrsoGrizzly_Davide1
+:CartaPosseduta_OrsoGrizzly_Davide1 rdf:type owl:NamedIndividual ,
+                                             <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
+                                             :CartaPosseduta ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGOrsoGrizzly ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :MazzoDavide_1 ;
+                                    :appartieneAMazzo :MazzoDavide_1 ;
+                                    :faRiferimentoACarta :CartaMTGOrsoGrizzly ;
+                                    :quantitaCarta 4 ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :MazzoDavide_1 ;
+                                    rdfs:comment "Carta \"Orso Grizzly\" inserita da Davide nel suo Mazzo RossoVerde"@it ;
+                                    rdfs:label "Orso Grizzly di Davide in rosso-verde"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaPosseduta_OrsoGrizzly_Davide2
+:CartaPosseduta_OrsoGrizzly_Davide2 rdf:type owl:NamedIndividual ,
+                                             <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
+                                             :CartaPosseduta ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGOrsoGrizzly ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :MazzoDavide_2 ;
+                                    :appartieneAMazzo :MazzoDavide_2 ;
+                                    :faRiferimentoACarta :CartaMTGOrsoGrizzly ;
+                                    :quantitaCarta 4 ;
+                                    <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :MazzoDavide_2 ;
+                                    rdfs:comment "Carta \"Orso Grizzly\" inserita da Davide nel suo Mazzo Verde Blu"@it ;
+                                    rdfs:label "Orso Grizzly di Davide in verde-blu"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CartaPosseduta_PassoTemporale_Davide
+:CartaPosseduta_PassoTemporale_Davide rdf:type owl:NamedIndividual ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
+                                               :CartaPosseduta ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGPassoTemporale ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :MazzoDavide_2 ;
+                                      :appartieneAMazzo :MazzoDavide_2 ;
+                                      :faRiferimentoACarta :CartaMTGPassoTemporale ;
+                                      :quantitaCarta 3 ;
+                                      <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :MazzoDavide_2 ;
+                                      rdfs:comment "Carta \"Passo Temporale\" inserita da Davide nel suo Mazzo RossoVerde"@it ;
+                                      rdfs:label "Passo Temporale di Davide"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoLOR_3
+:CostoLOR_3 rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "3" ;
+            rdfs:comment "Costo LOR di 3 mana"@it ;
+            rdfs:label "Costo LOR 3"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoLOR_4
+:CostoLOR_4 rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "4" ;
+            rdfs:comment "Costo LOR di 4 mana"@it ;
+            rdfs:label "Costo LOR 4"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoLOR_5
+:CostoLOR_5 rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "5" ;
+            rdfs:comment "Costo LOR di 5 mana"@it ;
+            rdfs:label "Costo LOR 5"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_0
+:CostoMTG_0 rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "{0}" ;
+            rdfs:comment "Costo MTG di 0 mana qualsiasi"@it ;
+            rdfs:label "Costo MTG 0"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_1G
+:CostoMTG_1G rdf:type owl:NamedIndividual ,
+                      :CaratteristicaCarta ,
+                      :Costo ;
+             :compostoDa "{1}{G}" ;
+             rdfs:comment "Costo MTG di un mana qualsiasi e un mana verde"@it ;
+             rdfs:label "Costo MTG {1}{G}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_1U
+:CostoMTG_1U rdf:type owl:NamedIndividual ,
+                      :CaratteristicaCarta ,
+                      :Costo ;
+             :compostoDa "{1}{U}" ;
+             rdfs:comment "Costo MTG di un mana qualsiasi e un mana blu"@it ;
+             rdfs:label "Costo MTG {1}{U}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_1W
+:CostoMTG_1W rdf:type owl:NamedIndividual ,
+                      :CaratteristicaCarta ,
+                      :Costo ;
+             :compostoDa "{1}{W}" ;
+             rdfs:comment "Costo MTG di un mana qualsiasi e un mana bianco"@it ;
+             rdfs:label "Costo MTG {1}{W}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_2G
+:CostoMTG_2G rdf:type owl:NamedIndividual ,
+                      :CaratteristicaCarta ,
+                      :Costo ;
+             :compostoDa "{2}{G}" ;
+             rdfs:comment "Costo MTG di due mana qualsiasi e un mana verde"@it ;
+             rdfs:label "Costo MTG {2}{G}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_G
+:CostoMTG_G rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "{G}" ;
+            rdfs:comment "Costo MTG di un mana verde"@it ;
+            rdfs:label "Costo MTG {G}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/CostoMTG_R
+:CostoMTG_R rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :Costo ;
+            :compostoDa "{R}" ;
+            rdfs:comment "Costo MTG di un mana rosso"@it ;
+            rdfs:label "Costo MTG {R}"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/FormatoMTGModern
+:FormatoMTGModern rdf:type owl:NamedIndividual ,
+                           :Formato ;
+                  :faRiferimentoAGioco :MagicTheGathering ;
+                  :haNome "Modern" ;
+                  rdfs:comment "Formato sanzionato di MTG chiamato \"Modern\""@it ;
+                  rdfs:label "Modern"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/GiocatoreDavide
+:GiocatoreDavide rdf:type owl:NamedIndividual ,
+                          :Giocatore ,
+                          :Persona ,
+                          <http://xmlns.com/foaf/0.1/Person> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :possiede ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Mazzo
+                          ] ;
+                 :possiede :MazzoDavide_1 ,
+                           :MazzoDavide_2 ;
+                 :possiedeCarta :CartaPosseduta_OrsoGrizzly_Davide1 ,
+                                :CartaPosseduta_OrsoGrizzly_Davide2 ,
+                                :CartaPosseduta_PassoTemporale_Davide ;
+                 <http://xmlns.com/foaf/0.1/givenName> "Davide" ;
+                 rdfs:comment "Persona che vuole giocare a MTG e si chiama Davide"@it ;
+                 rdfs:label "Davide"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/LegendsOfRuneterra
+:LegendsOfRuneterra rdf:type owl:NamedIndividual ,
+                             <http://dbpedia.org/resource/Collectible_card_game> ,
+                             :GiocoCarteCollezionabili ;
+                    :haNome "Legends Of Runeterra" ;
+                    :nomeGioco "Legends Of Runeterra" ;
+                    rdfs:comment "Gioco di carte collezionabili Legends of Runeterra (LOR)"@it ;
+                    rdfs:label "Legends of Runeterra"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/MagicTheGathering
+:MagicTheGathering rdf:type owl:NamedIndividual ,
+                            <http://dbpedia.org/resource/Collectible_card_game> ,
+                            :GiocoCarteCollezionabili ;
+                   :haNome "Magic: The Gathering" ;
+                   :nomeGioco "Magic: The Gathering" ;
+                   rdfs:comment "Gioco di carte collezionabili Magic The Gathering (MTG)"@it ;
+                   rdfs:label "Magic the Gathering"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/MazzoDavide_1
+:MazzoDavide_1 rdf:type owl:NamedIndividual ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                        :Mazzo ,
+                        [ rdf:type owl:Class ;
+                          owl:unionOf ( :CollezioneCarte
+                                        :Mazzo
+                                      )
+                        ] ;
+               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :CartaPosseduta_OrsoGrizzly_Davide1 ;
+               :mazzoPensatoPer :FormatoMTGModern ;
+               <http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta> :CartaPosseduta_OrsoGrizzly_Davide1 ;
+               :haNome "Mazzo RossoVerde" ;
+               <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :CartaPosseduta_OrsoGrizzly_Davide1 ;
+               rdfs:comment "Un mazzo di Davide, che si chiama RossoVerde"@it ;
+               rdfs:label "Mazzo rosso-verde"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/MazzoDavide_2
+:MazzoDavide_2 rdf:type owl:NamedIndividual ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
+                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                        :Mazzo ,
+                        [ rdf:type owl:Class ;
+                          owl:unionOf ( :CollezioneCarte
+                                        :Mazzo
+                                      )
+                        ] ;
+               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :CartaPosseduta_OrsoGrizzly_Davide2 ,
+                                                                              :CartaPosseduta_PassoTemporale_Davide ;
+               :mazzoNonLegaleIn :FormatoMTGModern ;
+               <http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta> :CartaPosseduta_OrsoGrizzly_Davide2 ,
+                                                                                :CartaPosseduta_PassoTemporale_Davide ;
+               :haNome "Mazzo Verde Blu" ;
+               <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :CartaPosseduta_OrsoGrizzly_Davide2 ,
+                                                                                             :CartaPosseduta_PassoTemporale_Davide ;
+               rdfs:comment "Un mazzo di Davide che si chiama Verde Blu"@it ;
+               rdfs:label "Mazzo verde-blu"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàComune
+:RaritàComune rdf:type owl:NamedIndividual ,
+                       :CaratteristicaCarta ,
+                       :LivelloRarità ,
+                       [ rdf:type owl:Class ;
+                         owl:oneOf ( :RaritàComune
+                                     :RaritàEpica
+                                     :RaritàMitica
+                                     :RaritàNonComune
+                                     :RaritàRara
+                                   )
+                       ] ;
+              rdfs:comment "Rarità di carte di CCG"@it ;
+              rdfs:label "Rarità Comune"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàEpica
+:RaritàEpica rdf:type owl:NamedIndividual ,
+                      :CaratteristicaCarta ,
+                      :LivelloRarità ,
+                      [ rdf:type owl:Class ;
+                        owl:oneOf ( :RaritàComune
+                                    :RaritàEpica
+                                    :RaritàMitica
+                                    :RaritàNonComune
+                                    :RaritàRara
+                                  )
+                      ] ;
+             rdfs:comment "Rarità di carte di CCG"@it ;
+             rdfs:label "Rarità Epica"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàMitica
+:RaritàMitica rdf:type owl:NamedIndividual ,
+                       :CaratteristicaCarta ,
+                       :LivelloRarità ,
+                       [ rdf:type owl:Class ;
+                         owl:oneOf ( :RaritàComune
+                                     :RaritàEpica
+                                     :RaritàMitica
+                                     :RaritàNonComune
+                                     :RaritàRara
+                                   )
+                       ] ;
+              rdfs:comment "Rarità di carte di CCG"@it ;
+              rdfs:label "Rarità Mitica"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàNonComune
+:RaritàNonComune rdf:type owl:NamedIndividual ,
+                          :CaratteristicaCarta ,
+                          :LivelloRarità ,
+                          [ rdf:type owl:Class ;
+                            owl:oneOf ( :RaritàComune
+                                        :RaritàEpica
+                                        :RaritàMitica
+                                        :RaritàNonComune
+                                        :RaritàRara
+                                      )
+                          ] ;
+                 rdfs:comment "Rarità di carte di CCG"@it ;
+                 rdfs:label "Rarità Non Comune"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàRara
+:RaritàRara rdf:type owl:NamedIndividual ,
+                     :CaratteristicaCarta ,
+                     :LivelloRarità ,
+                     [ rdf:type owl:Class ;
+                       owl:oneOf ( :RaritàComune
+                                   :RaritàEpica
+                                   :RaritàMitica
+                                   :RaritàNonComune
+                                   :RaritàRara
+                                 )
+                     ] ;
+            rdfs:comment "Rarità di carte di CCG"@it ;
+            rdfs:label "Rarità Rara"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/SetMTGDecimaEdizione
+:SetMTGDecimaEdizione rdf:type owl:NamedIndividual ,
+                               :CaratteristicaCarta ,
+                               :Set ;
+                      :faRiferimentoAGioco :MagicTheGathering ;
+                      :haNome "Decima Edizione" ;
+                      rdfs:comment "Set di MTG che si chiama \"Decima Edizione\""@it ;
+                      rdfs:label "Set MTG 10E"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/SetMTGMagic2010
+:SetMTGMagic2010 rdf:type owl:NamedIndividual ,
+                          :CaratteristicaCarta ,
+                          :Set ;
+                 :faRiferimentoAGioco :MagicTheGathering ;
+                 :haNome "Magic 2010" ;
+                 rdfs:comment "Set di MTG che si chiama \"Magic 2012\""@it ;
+                 rdfs:label "Set MTG M10"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola
+<http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> rdf:type owl:NamedIndividual ,
+                                                                                       <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
+                                                                                       :CartaPosseduta ;
+                                                                              <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGOnoreDeiPuri ;
+                                                                              <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                              :appartieneACollezione <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                              :faRiferimentoACarta :CartaMTGOnoreDeiPuri ;
+                                                                              :setCartaPosseduta :SetMTGMagic2010 ;
+                                                                              :quantitaCarta 6 ;
+                                                                              <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                              rdfs:comment "Carta \"Onore dei Puri\" inserita da Nicola nella sua collezione"@it ;
+                                                                              rdfs:label "Onore dei puri di Nicola"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola
+<http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
+                                                                                         :CartaPosseduta ;
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGOrnitottero ;
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                                :appartieneACollezione <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                                :faRiferimentoACarta :CartaMTGOrnitottero ;
+                                                                                :setCartaPosseduta :SetMTGDecimaEdizione ;
+                                                                                :quantitaCarta 10 ;
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                                rdfs:comment "Carta \"Ornitottero\" inserita da Nicola nella sua collezione"@it ;
+                                                                                rdfs:label "Ornitottero di Nicola"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola
+<http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
+                                                                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                        :CollezioneCarte ,
+                                                                        [ rdf:type owl:Class ;
+                                                                          owl:unionOf ( :CollezioneCarte
+                                                                                        :Mazzo
+                                                                                      )
+                                                                        ] ;
+                                                               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
+                                                                                                                              <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
+                                                               <http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
+                                                                                                                                     <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
+                                                               <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
+                                                                                                                                             <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
+                                                               rdfs:comment "La Collezione di carte di Nicola"@it ;
+                                                               rdfs:label "Collezione di Nicola"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola
+<http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola> rdf:type owl:NamedIndividual ,
+                                                                           :Collezionista ,
+                                                                           :Persona ,
+                                                                           <http://xmlns.com/foaf/0.1/Person> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :possiede ;
+                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onClass :CollezioneCarte
+                                                                           ] ;
+                                                                  :possiede <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
+                                                                  :possiedeCarta <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
+                                                                                 <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
+                                                                  <http://xmlns.com/foaf/0.1/givenName> "Nicola" ;
+                                                                  rdfs:comment "Persona che colleziona carte e che si chiama Nicola"@it ;
+                                                                  rdfs:label "Nicola"@it .
+
+
+###  http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander
+<http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander> rdf:type owl:NamedIndividual ,
+                                                                           :Formato ;
+                                                                  :faRiferimentoAGioco :MagicTheGathering ;
+                                                                  :haNome "Commander" ;
+                                                                  rdfs:comment "Formato for fun di MTG chiamato \"Commander\""@it ;
+                                                                  rdfs:label "Commander"@it .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> rdfs:comment "This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> rdfs:comment "This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent> rdfs:comment "This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences> rdfs:comment "This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent> rdfs:comment "This annotation property is used in order to describe the intent of the content pattern." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest> rdfs:comment "This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf> rdfs:comment "This annotation property is used for referring a cloned ontology entity to its cloning source." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf> rdfs:comment "This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom> rdfs:comment "This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf" .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs> rdfs:comment "This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios> rdfs:comment "This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: \"the brain is part of the human body\". Scenarios are expressed as natural language sentences." .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :AbilitàAumentoLivelloVayne
+                        :AbilitàBarriera
+                        :AbilitàCapriola
+                        :AbilitàCecchinoCieloaperto
+                        :AbilitàEsploratore
+                        :AbilitàGrandePiazza
+                        :AbilitàMazzaOsso
+                        :AbilitàOnoreDeiPuri
+                        :AbilitàRaggiungere
+                        :AbilitàTurnoExtra
+                        :AbilitàVayne
+                        :AbilitàVayneLvl2
+                        :AbilitàVolare
+                        :CartaLORCapriola
+                        :CartaLORGrandePiazza
+                        :CartaLORGuardianoZannaverde
+                        :CartaLORMazzaOsso
+                        :CartaLORVayneLvl1
+                        :CartaLORVayneLvl2
+                        :CartaMTGCecchinaCieloaperto
+                        :CartaMTGFulmine
+                        :CartaMTGIsola
+                        :CartaMTGOnoreDeiPuri
+                        :CartaMTGOrnitottero
+                        :CartaMTGOrsoGrizzly
+                        :CartaMTGPassoTemporale
+                        :CartaPosseduta_OrsoGrizzly_Davide1
+                        :CartaPosseduta_OrsoGrizzly_Davide2
+                        :CartaPosseduta_PassoTemporale_Davide
+                        :CostoLOR_3
+                        :CostoLOR_4
+                        :CostoLOR_5
+                        :CostoMTG_0
+                        :CostoMTG_1G
+                        :CostoMTG_1U
+                        :CostoMTG_1W
+                        :CostoMTG_2G
+                        :CostoMTG_G
+                        :CostoMTG_R
+                        :FormatoMTGModern
+                        :GiocatoreDavide
+                        :LegendsOfRuneterra
+                        :MagicTheGathering
+                        :MazzoDavide_1
+                        :MazzoDavide_2
+                        :RaritàComune
+                        :RaritàEpica
+                        :RaritàMitica
+                        :RaritàNonComune
+                        :RaritàRara
+                        :SetMTGDecimaEdizione
+                        :SetMTGMagic2010
+                        <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola>
+                        <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola>
+                        <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola>
+                        <http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola>
+                        <http://www.semanticweb.org/ModeSem2022/ccgo/FormatoMTGCommander>
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#cp> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#m> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#q> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#c> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#t> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#g> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#g1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#g2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#f1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#f2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "QuattroCopiePerMazzoModern" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :appartieneAMazzo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :quantitaCarta ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#q>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#q> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 4 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Formato ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNome ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> "Modern"
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoACarta ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :tipoCarta ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#t>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#notEqual> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                                                                 rdf:first <urn:swrl:var#t> ;
+                                                                                                                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                            rdf:first "Terra Base" ;
+                                                                                                                                                                                            rdf:rest rdf:nil
+                                                                                                                                                                                          ]
+                                                                                                                                                                               ]
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest rdf:nil
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :mazzoNonLegaleIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che permette di assegnare un gioco di riferimento a un mazzo sulla base delle carte che lo compongono." ;
+   rdfs:label "AssegnaGiocoAMazzo" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :appartieneAMazzo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#cp>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoACarta ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che garantisce che un mazzo possa essere solo del gioco di cui contiene le carte." ;
+   rdfs:label "MazzoDiUnSoloGioco" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :appartieneAMazzo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#cp>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoACarta ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g2>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#g1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che impedisce che una carta di un gioco abbia il set di un altro gioco" ;
+   rdfs:label "SetCartaStessoGioco" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoAGioco ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :haSet ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#g1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#g2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che stabilisce automaticamente se una carta sia stata ristampata o meno." ;
+   rdfs:label "CartaRistampata" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s2>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :haSet ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :haSet ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s2>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :stampataPiuVolte ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> "true"^^xsd:boolean
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che permette di identificare i mazzi che non sono legali nel formato per cui sono stati pensati." ;
+   rdfs:label "MazzoIllegale" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :mazzoPensatoPer ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :mazzoNonLegaleIn ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f2>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
