@@ -438,10 +438,6 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> rdf:type owl:Class .
 
 
-###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
-<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/ModSem2022/ccgo/Abilità
 :Abilità rdf:type owl:Class ;
          rdfs:subClassOf :CaratteristicaCarta ;
@@ -623,6 +619,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                                                  :RaritàMitica
                                                  :RaritàNonComune
                                                  :RaritàRara
+                                                 :RaritàSpeciale
                                                )
                                    ] ;
                rdfs:subClassOf :CaratteristicaCarta ;
@@ -814,15 +811,17 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORCapriola
 :CartaLORCapriola rdf:type owl:NamedIndividual ,
                            <http://dbpedia.org/resource/Playing_card> ,
-                           :Carta ;
+                           :Carta ,
+                           :CartaNonPermanente ;
+                  :faRiferimentoAGioco :LegendsOfRuneterra ;
                   :haAbilità :AbilitàCapriola ;
                   :haCaratteristica :AbilitàCapriola ,
                                     :CostoLOR_4 ;
                   :haCosto :CostoLOR_4 ;
                   :interagisceCon :CartaLORCapriola ,
-                                  :CartaLORVayneLvl1 ,
                                   :CartaLORVayneLvl2 ;
                   :haNome "Capriola" ;
+                  :haVelocita "Lento" ;
                   :nomeCarta "Capriola" ;
                   :sottotipoCarta "Lento" ;
                   :tipoCarta "Incantesimo" ;
@@ -834,6 +833,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 :CartaLORGrandePiazza rdf:type owl:NamedIndividual ,
                                <http://dbpedia.org/resource/Playing_card> ,
                                :Carta ;
+                      :faRiferimentoAGioco :LegendsOfRuneterra ;
                       :haAbilità :AbilitàGrandePiazza ;
                       :haCaratteristica :AbilitàGrandePiazza ,
                                         :CostoLOR_3 ,
@@ -852,37 +852,11 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                                       <http://dbpedia.org/resource/Playing_card> ,
                                       :Carta ,
                                       :CartaPermanente ,
-                                      :CartaUnità ,
-                                      [ owl:intersectionOf ( :CartaPermanente
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :haAttacco ;
-                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onDataRange xsd:integer
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :haDifesa ;
-                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onDataRange xsd:integer
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :haAttacco ;
-                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                        owl:onDataRange xsd:integer
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :haDifesa ;
-                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                        owl:onDataRange xsd:integer
-                                      ] ;
+                                      :CartaUnità ;
+                             :faRiferimentoAGioco :LegendsOfRuneterra ;
                              :haAbilità :AbilitàBarriera ,
                                         :AbilitàEsploratore ;
-                             :haCaratteristica :AbilitàBarriera ,
-                                               :AbilitàEsploratore ,
-                                               :CostoLOR_3 ,
-                                               :RaritàComune ;
+                             :haCaratteristica :AbilitàEsploratore ;
                              :haCosto :CostoLOR_3 ;
                              :haRarità :RaritàComune ;
                              :haAttacco 2 ;
@@ -890,6 +864,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                              :haNome "Guardiano di Zannaverde" ;
                              :nomeCarta "Guardiano di Zannaverde" ;
                              :sottotipoCarta "Elite" ;
+                             :tipoCarta "Seguace" ;
                              rdfs:comment "Carta \"Guardiano Zannaverde\" di LOR"@it ;
                              rdfs:label "Carta Guardiano Zannaverde LOR"@it .
 
@@ -897,7 +872,9 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/CartaLORMazzaOsso
 :CartaLORMazzaOsso rdf:type owl:NamedIndividual ,
                             <http://dbpedia.org/resource/Playing_card> ,
-                            :Carta ;
+                            :Carta ,
+                            :CartaPermanente ;
+                   :faRiferimentoAGioco :LegendsOfRuneterra ;
                    :haAbilità :AbilitàMazzaOsso ;
                    :haCaratteristica :AbilitàMazzaOsso ,
                                      :CostoLOR_5 ,
@@ -906,6 +883,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                    :haRarità :RaritàComune ;
                    :haNome "Mazza d'Osso" ;
                    :nomeCarta "Mazza d'Osso" ;
+                   :tipoCarta "Equipaggiamento" ;
                    rdfs:comment "Carta \"Mazza d'Osso\" di LOR"@it ;
                    rdfs:label "Carta Mazza d'Osso di LOR"@it .
 
@@ -923,9 +901,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                                      :AbilitàVayne ,
                                      :CostoLOR_3 ;
                    :haCosto :CostoLOR_3 ;
-                   :interagisceCon :CartaLORCapriola ,
-                                   :CartaLORVayneLvl1 ,
-                                   :CartaLORVayneLvl2 ;
+                   :interagisceCon :CartaLORVayneLvl1 ;
                    :haAttacco 3 ;
                    :haDifesa 3 ;
                    :haNome "Vayne" ;
@@ -941,6 +917,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                             :Carta ,
                             :CartaPermanente ,
                             :CartaUnità ;
+                   :faRiferimentoAGioco :LegendsOfRuneterra ;
                    :haAbilità :AbilitàVayneLvl2 ;
                    :haCaratteristica :AbilitàVayneLvl2 ,
                                      :CostoLOR_3 ;
@@ -952,6 +929,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                    :haDifesa 4 ;
                    :haNome "Vayne" ;
                    :nomeCarta "Vayne" ;
+                   :tipoCarta "Campione" ;
                    rdfs:comment "Carta \"Vayne LVL 2\" di LOR"@it ;
                    rdfs:label "Carta Vayne LVL 2 LOR"@it .
 
@@ -961,31 +939,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                                       <http://dbpedia.org/resource/Playing_card> ,
                                       :Carta ,
                                       :CartaPermanente ,
-                                      :CartaUnità ,
-                                      [ owl:intersectionOf ( :CartaPermanente
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :haAttacco ;
-                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onDataRange xsd:integer
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :haDifesa ;
-                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onDataRange xsd:integer
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :haAttacco ;
-                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                        owl:onDataRange xsd:integer
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :haDifesa ;
-                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                        owl:onDataRange xsd:integer
-                                      ] ;
+                                      :CartaUnità ;
                              :faRiferimentoAGioco :MagicTheGathering ;
                              :haAbilità :AbilitàCecchinoCieloaperto ,
                                         :AbilitàRaggiungere ;
@@ -1001,6 +955,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                              :nomeCarta "Cecchina del Cieloaperto" ;
                              :sottotipoCarta "Arciere" ,
                                              "Elfo" ;
+                             :tipoCarta "Creatura" ;
                              rdfs:comment "Carta \"Cecchina Cieloaperto\" di MTG"@it ;
                              rdfs:label "Carta MTG Cecchina Cieloaperto"@it .
 
@@ -1008,13 +963,17 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGFulmine
 :CartaMTGFulmine rdf:type owl:NamedIndividual ,
                           <http://dbpedia.org/resource/Playing_card> ,
-                          :Carta ;
+                          :Carta ,
+                          :CartaNonPermanente ;
                  :faRiferimentoAGioco :MagicTheGathering ;
                  :haCaratteristica :CostoMTG_R ,
                                    :RaritàNonComune ;
                  :haCosto :CostoMTG_R ;
                  :haRarità :RaritàNonComune ;
-                 :haNome "Fulmine" ;
+                 :haImmagine "https://cards.scryfall.io/large/front/1/f/1f39e919-698c-4bc6-a604-6cd77a3c25d2.jpg?1656033004"^^xsd:anyURI ;
+                 :haVelocita "Istantaneo" ;
+                 :nomeCarta "Fulmine" ;
+                 :tipoCarta "Istantaneo" ;
                  rdfs:comment "Carta \"Fulmine\" di MTG"@it ;
                  rdfs:label "Carta MTG Fulmine"@it .
 
@@ -1022,12 +981,15 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGIsola
 :CartaMTGIsola rdf:type owl:NamedIndividual ,
                         <http://dbpedia.org/resource/Playing_card> ,
-                        :Carta ;
+                        :Carta ,
+                        :CartaPermanente ;
                :faRiferimentoAGioco :MagicTheGathering ;
                :haCaratteristica :RaritàComune ;
                :haRarità :RaritàComune ;
+               :haImmagine "https://cards.scryfall.io/large/front/f/a/fa641d46-d002-4903-af72-e96971f558bc.jpg?1675023245"^^xsd:anyURI ;
                :haNome "Isola" ;
                :nomeCarta "Isola" ;
+               :tipoCarta "Terra Base" ;
                rdfs:comment "Carta \"Isola\" di MTG"@it ;
                rdfs:label "Carta MTG Isola"@it .
 
@@ -1035,7 +997,8 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/CartaMTGOnoreDeiPuri
 :CartaMTGOnoreDeiPuri rdf:type owl:NamedIndividual ,
                                <http://dbpedia.org/resource/Playing_card> ,
-                               :Carta ;
+                               :Carta ,
+                               :CartaPermanente ;
                       :faRiferimentoAGioco :MagicTheGathering ;
                       :haAbilità :AbilitàOnoreDeiPuri ;
                       :haCaratteristica :AbilitàOnoreDeiPuri ,
@@ -1045,6 +1008,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                       :haCosto :CostoMTG_1W ;
                       :haRarità :RaritàRara ;
                       :haSet :SetMTGMagic2010 ;
+                      :haImmagine "https://cards.scryfall.io/large/front/6/d/6d0953ba-1bfa-40af-9668-79107c8b24cc.jpg?1561983523"^^xsd:anyURI ;
                       :haNome "Onore dei Puri" ;
                       :nomeCarta "Onore dei Puri" ;
                       :tipoCarta "Incantesimo" ;
@@ -1057,31 +1021,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                               <http://dbpedia.org/resource/Playing_card> ,
                               :Carta ,
                               :CartaPermanente ,
-                              :CartaUnità ,
-                              [ owl:intersectionOf ( :CartaPermanente
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :haAttacco ;
-                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onDataRange xsd:integer
-                                                     ]
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :haDifesa ;
-                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onDataRange xsd:integer
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :haAttacco ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:integer
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :haDifesa ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:integer
-                              ] ;
+                              :CartaUnità ;
                      :faRiferimentoAGioco :MagicTheGathering ;
                      :haAbilità :AbilitàVolare ;
                      :haCaratteristica :AbilitàVolare ,
@@ -1126,6 +1066,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                      :nomeCarta "Orso Grizzly" ;
                      :sottotipoCarta "Orso" ;
                      :stampataPiuVolte "true"^^xsd:boolean ;
+                     :tipoCarta "Creatura" ;
                      rdfs:comment "Carta \"Orso Grizzly\" di MTG"@it ;
                      rdfs:label "Carta MTG Orso Grizzly"@it .
 
@@ -1181,8 +1122,6 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 :CartaPosseduta_PassoTemporale_Davide rdf:type owl:NamedIndividual ,
                                                <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item> ,
                                                :CartaPosseduta ;
-                                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemContent> :CartaMTGPassoTemporale ;
-                                      <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#itemOf> :MazzoDavide_2 ;
                                       :appartieneAMazzo :MazzoDavide_2 ;
                                       :faRiferimentoACarta :CartaMTGPassoTemporale ;
                                       :quantitaCarta 3 ;
@@ -1294,12 +1233,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 :GiocatoreDavide rdf:type owl:NamedIndividual ,
                           :Giocatore ,
                           :Persona ,
-                          <http://xmlns.com/foaf/0.1/Person> ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :possiede ;
-                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :Mazzo
-                          ] ;
+                          <http://xmlns.com/foaf/0.1/Person> ;
                  :possiede :MazzoDavide_1 ,
                            :MazzoDavide_2 ;
                  :possiedeCarta :CartaPosseduta_OrsoGrizzly_Davide1 ,
@@ -1333,16 +1267,9 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/MazzoDavide_1
 :MazzoDavide_1 rdf:type owl:NamedIndividual ,
                         <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                        :Mazzo ,
-                        [ rdf:type owl:Class ;
-                          owl:unionOf ( :CollezioneCarte
-                                        :Mazzo
-                                      )
-                        ] ;
+                        :Mazzo ;
                <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :CartaPosseduta_OrsoGrizzly_Davide1 ;
                :mazzoPensatoPer :FormatoMTGModern ;
-               <http://www.semanticweb.org/ModeSem2022/ccgo/mazzoContieneCarta> :CartaPosseduta_OrsoGrizzly_Davide1 ;
                :haNome "Mazzo RossoVerde" ;
                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :CartaPosseduta_OrsoGrizzly_Davide1 ;
                rdfs:comment "Un mazzo di Davide, che si chiama RossoVerde"@it ;
@@ -1352,13 +1279,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/MazzoDavide_2
 :MazzoDavide_2 rdf:type owl:NamedIndividual ,
                         <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                        :Mazzo ,
-                        [ rdf:type owl:Class ;
-                          owl:unionOf ( :CollezioneCarte
-                                        :Mazzo
-                                      )
-                        ] ;
+                        :Mazzo ;
                <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> :CartaPosseduta_OrsoGrizzly_Davide2 ,
                                                                               :CartaPosseduta_PassoTemporale_Davide ;
                :mazzoNonLegaleIn :FormatoMTGModern ;
@@ -1374,15 +1295,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàComune
 :RaritàComune rdf:type owl:NamedIndividual ,
                        :CaratteristicaCarta ,
-                       :LivelloRarità ,
-                       [ rdf:type owl:Class ;
-                         owl:oneOf ( :RaritàComune
-                                     :RaritàEpica
-                                     :RaritàMitica
-                                     :RaritàNonComune
-                                     :RaritàRara
-                                   )
-                       ] ;
+                       :LivelloRarità ;
               rdfs:comment "Rarità di carte di CCG"@it ;
               rdfs:label "Rarità Comune"@it .
 
@@ -1390,15 +1303,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàEpica
 :RaritàEpica rdf:type owl:NamedIndividual ,
                       :CaratteristicaCarta ,
-                      :LivelloRarità ,
-                      [ rdf:type owl:Class ;
-                        owl:oneOf ( :RaritàComune
-                                    :RaritàEpica
-                                    :RaritàMitica
-                                    :RaritàNonComune
-                                    :RaritàRara
-                                  )
-                      ] ;
+                      :LivelloRarità ;
              rdfs:comment "Rarità di carte di CCG"@it ;
              rdfs:label "Rarità Epica"@it .
 
@@ -1406,15 +1311,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàMitica
 :RaritàMitica rdf:type owl:NamedIndividual ,
                        :CaratteristicaCarta ,
-                       :LivelloRarità ,
-                       [ rdf:type owl:Class ;
-                         owl:oneOf ( :RaritàComune
-                                     :RaritàEpica
-                                     :RaritàMitica
-                                     :RaritàNonComune
-                                     :RaritàRara
-                                   )
-                       ] ;
+                       :LivelloRarità ;
               rdfs:comment "Rarità di carte di CCG"@it ;
               rdfs:label "Rarità Mitica"@it .
 
@@ -1422,15 +1319,7 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàNonComune
 :RaritàNonComune rdf:type owl:NamedIndividual ,
                           :CaratteristicaCarta ,
-                          :LivelloRarità ,
-                          [ rdf:type owl:Class ;
-                            owl:oneOf ( :RaritàComune
-                                        :RaritàEpica
-                                        :RaritàMitica
-                                        :RaritàNonComune
-                                        :RaritàRara
-                                      )
-                          ] ;
+                          :LivelloRarità ;
                  rdfs:comment "Rarità di carte di CCG"@it ;
                  rdfs:label "Rarità Non Comune"@it .
 
@@ -1438,17 +1327,15 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàRara
 :RaritàRara rdf:type owl:NamedIndividual ,
                      :CaratteristicaCarta ,
-                     :LivelloRarità ,
-                     [ rdf:type owl:Class ;
-                       owl:oneOf ( :RaritàComune
-                                   :RaritàEpica
-                                   :RaritàMitica
-                                   :RaritàNonComune
-                                   :RaritàRara
-                                 )
-                     ] ;
+                     :LivelloRarità ;
             rdfs:comment "Rarità di carte di CCG"@it ;
             rdfs:label "Rarità Rara"@it .
+
+
+###  http://www.semanticweb.org/ModSem2022/ccgo/RaritàSpeciale
+:RaritàSpeciale rdf:type owl:NamedIndividual ,
+                         :CaratteristicaCarta ,
+                         :LivelloRarità .
 
 
 ###  http://www.semanticweb.org/ModSem2022/ccgo/SetMTGDecimaEdizione
@@ -1504,17 +1391,9 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola
 <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> rdf:type owl:NamedIndividual ,
                                                                         <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag> ,
-                                                                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
-                                                                        :CollezioneCarte ,
-                                                                        [ rdf:type owl:Class ;
-                                                                          owl:unionOf ( :CollezioneCarte
-                                                                                        :Mazzo
-                                                                                      )
-                                                                        ] ;
-                                                               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
-                                                                                                                              <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
-                                                               <http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
-                                                                                                                                     <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
+                                                                        :CollezioneCarte ;
+                                                               <http://www.ontologydesignpatterns.org/cp/owl/bag.owl#hasItem> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ;
+                                                               <http://www.semanticweb.org/ModeSem2022/ccgo/collezioneContieneCarta> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ;
                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
                                                                                                                                              <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
                                                                rdfs:comment "La Collezione di carte di Nicola"@it ;
@@ -1523,14 +1402,8 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola
 <http://www.semanticweb.org/ModeSem2022/ccgo/CollezionistaNicola> rdf:type owl:NamedIndividual ,
-                                                                           :Collezionista ,
                                                                            :Persona ,
-                                                                           <http://xmlns.com/foaf/0.1/Person> ,
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty :possiede ;
-                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                             owl:onClass :CollezioneCarte
-                                                                           ] ;
+                                                                           <http://xmlns.com/foaf/0.1/Person> ;
                                                                   :possiede <http://www.semanticweb.org/ModeSem2022/ccgo/CollezioneNicola> ;
                                                                   :possiedeCarta <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_OnorePuri_Nicola> ,
                                                                                  <http://www.semanticweb.org/ModeSem2022/ccgo/CartaPosseduta_Ornitottero_Nicola> ;
@@ -1655,17 +1528,23 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 #    Rules
 #################################################################
 
-<urn:swrl:var#cp> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+:cp rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:m rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:q rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:f rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:t rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#m> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
-<urn:swrl:var#q> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl:var#cp> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#c> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-<urn:swrl:var#t> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#g> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
@@ -1682,86 +1561,6 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
 <urn:swrl:var#f1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 <urn:swrl:var#f2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "QuattroCopiePerMazzoModern" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :appartieneAMazzo ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#m>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :quantitaCarta ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#q>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
-                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                          rdf:first <urn:swrl:var#q> ;
-                                                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 4 ;
-                                                                                                                                     rdf:rest rdf:nil
-                                                                                                                                   ]
-                                                                                                                        ]
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Formato ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f>
-                                                                                      ] ;
-                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNome ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> "Modern"
-                                                                                                 ] ;
-                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoACarta ;
-                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#cp> ;
-                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#c>
-                                                                                                            ] ;
-                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :tipoCarta ;
-                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#c> ;
-                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#t>
-                                                                                                                       ] ;
-                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                                                                    <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#notEqual> ;
-                                                                                                                                    <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                                                                                 rdf:first <urn:swrl:var#t> ;
-                                                                                                                                                                                 rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                                                            rdf:first "Terra Base" ;
-                                                                                                                                                                                            rdf:rest rdf:nil
-                                                                                                                                                                                          ]
-                                                                                                                                                                               ]
-                                                                                                                                  ] ;
-                                                                                                                        rdf:rest rdf:nil
-                                                                                                                      ]
-                                                                                                           ]
-                                                                                                ]
-                                                                                     ]
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :mazzoNonLegaleIn ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#m> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f>
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Regola che permette di assegnare un gioco di riferimento a un mazzo sulla base delle carte che lo compongono." ;
@@ -1934,6 +1733,86 @@ rdfs:subclassOf rdf:type owl:AnnotationProperty .
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#f1> ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#f2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola di costruzione dei mazzi di MTG per il formato Modern. In particolare, in Modern un mazzo non può contenere più di 4 copie di una carta che non sia una Terra Base."^^xsd:string ;
+   rdfs:label "QuattroCopiePerMazzoModern"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :appartieneAMazzo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :cp ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :m
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :quantitaCarta ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :cp ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :q
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :q ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 4 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Formato ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :f
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNome ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :f ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> "Modern"
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :faRiferimentoACarta ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :cp ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :c
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :tipoCarta ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> :t
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#notEqual> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                                                                 rdf:first :t ;
+                                                                                                                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                            rdf:first "Terra Base" ;
+                                                                                                                                                                                            rdf:rest rdf:nil
+                                                                                                                                                                                          ]
+                                                                                                                                                                               ]
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest rdf:nil
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :mazzoNonLegaleIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :m ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :f
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
